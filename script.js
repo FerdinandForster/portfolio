@@ -1,3 +1,5 @@
+
+//Accordion
 const accordions = document.querySelectorAll('.accordion');
 
         accordions.forEach(accordion => {
@@ -13,6 +15,64 @@ const accordions = document.querySelectorAll('.accordion');
                 }
             });
         });
+//Carousel
+const carousel = document.getElementById('carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    let isDragging = false;
+    let startPos = 0;
+    let prevTranslate = 0;
+
+    // Touch Events
+    carousel.addEventListener('touchstart', startDrag);
+    carousel.addEventListener('touchmove', drag);
+    carousel.addEventListener('touchend', endDrag);
+
+    // Scroll Event
+    carousel.addEventListener('scroll', updateButtons);
+
+    function startDrag(e) {
+      isDragging = true;
+      carousel.classList.add('grabbing');
+      startPos = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+      startPos -= carousel.offsetLeft;
+      prevTranslate = carousel.scrollLeft;
+    }
+
+    function drag(e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      
+      const currentPosition = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+      const x = currentPosition - carousel.offsetLeft;
+      const walk = (x - startPos) * 2;
+      carousel.scrollLeft = prevTranslate - walk;
+    }
+
+    function endDrag() {
+      isDragging = false;
+      carousel.classList.remove('grabbing');
+    }
+
+    // Arrow Navigation
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -360, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: 360, behavior: 'smooth' });
+    });
+
+    function updateButtons() {
+      const scrollLeft = carousel.scrollLeft;
+      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+      
+      prevBtn.disabled = scrollLeft <= 0;
+      nextBtn.disabled = scrollLeft >= maxScroll - 1;
+    }
+
+    updateButtons();
 
 
 // connect project-cards and modals
@@ -74,3 +134,4 @@ filterButtons.forEach((button) => {
     updateButtons();
   });
 });
+
