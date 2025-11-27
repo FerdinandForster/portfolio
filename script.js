@@ -1,27 +1,37 @@
 // Navbar
 const burger = document.getElementById('burger');
-        const navMenu = document.getElementById('navMenu');
+const navMenu = document.getElementById('navMenu');
+const profileText = document.querySelector('.profile-text');
+const navbar = document.querySelector('.navbar');
 
-        burger.addEventListener('click', () => {
-            burger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
+if (burger && navMenu && navbar) {
+  const setMenuState = (isOpen) => {
+    burger.classList.toggle('active', isOpen);
+    navMenu.classList.toggle('active', isOpen);
+    burger.setAttribute('aria-expanded', String(isOpen));
+    burger.setAttribute('aria-label', isOpen ? 'Navigation schließen' : 'Navigation öffnen');
+    if (profileText) {
+      profileText.classList.toggle('is-hidden', isOpen);
+    }
+  };
 
-        // Schließe das Menü beim Klick auf einen Link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                burger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
+  burger.addEventListener('click', (event) => {
+    event.stopPropagation();
+    setMenuState(!burger.classList.contains('active'));
+  });
 
-        // Schließe das Menü beim Klick außerhalb
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.navbar')) {
-                burger.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
-        });
+  // Schließe das Menü beim Klick auf einen Link
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => setMenuState(false));
+  });
+
+  // Schließe das Menü beim Klick außerhalb
+  document.addEventListener('click', (e) => {
+    if (!navbar.contains(e.target)) {
+      setMenuState(false);
+    }
+  });
+}
 
 
 
@@ -161,4 +171,3 @@ filterButtons.forEach((button) => {
     updateButtons();
   });
 });
-
