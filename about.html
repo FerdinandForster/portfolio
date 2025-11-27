@@ -8,6 +8,32 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+        <!--Navbar-->
+    <nav class="navbar">
+        <a href="index.html" class="navbar-profile">
+            <img class="profile-picture" src="assets/profilbild.jpg" alt="Porträt eines jungen Mannes mit kurzem braunem Haar und grauem Oberteil."/>
+            <div class="profile-text">
+                <h1>Ferdinand Forster</h1>
+                <p>User Experience Designer</p>
+            </div>
+        </a>
+
+        <div class="nav-controls">
+          <ul class="nav-menu" id="navMenu">
+              <li><a href="index.html" class="nav-link">Projekte</a></li>
+              <li><a href="about.html" class="nav-link-active">Über</a></li>
+              <li><a href="#contact" class="nav-link">Kontakt</a></li>
+          </ul>
+          <button class="burger" id="burger" aria-label="Navigation öffnen" aria-controls="navMenu" aria-expanded="false">
+            <svg class="burger-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
+            </svg>
+            <svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+    </nav>
     
     <!--Info-->
     <section id="info">
@@ -118,6 +144,35 @@
       <h3>Hobbys</h3>
       <p>Außerhalb des UX Designs begeistere ich mich für Segelfliegen, Laufen, Skifahren und Rennradfahren.</p>    
     </section>
+
+        <!--Footer-->
+    <footer id="contact">
+    <div class="footer-top">
+      <!--
+      <h2>Kontakt</h2>
+      <p>Bei Fragen stehe ich Ihnen gerne zur Verfügung.</p> -->
+    </div>
+    <div class="footer-center">
+        <div class="footer-center-left">
+          <a href="#index.html">Projekte</a>
+          <a href="about.html">Info</a>
+        </div>
+        <div class="footer-center-right">
+          <a href="mailto:ferdinand.forster@icloud.com">E-Mail<img src="/assets/link-arrow.svg" class="arrow-right-up" alt="Link icon"/></a>
+          <a href="https://www.linkedin.com/in/ferdinand-forster-902121269/" target="_blank" rel="noopener noreferrer">LinkedIn<img src="/assets/link-arrow.svg" class="arrow-right-up" alt="Link icon"/></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+          <a href="accessibility.html">Barrierefreiheitserklärung</a>
+          <a href="imprint.html">Impressum</a>
+          <a href="privacy.html">Datenschutz</a>
+        </div>
+      <div class="footer-bottom-right">
+        <p>Ferdinand Forster © 2025 Alle Rechte vorbehalten</p>
+      </div>
+    </div>
+    </footer>
 
     <script src="script.js"></script>
   </body>

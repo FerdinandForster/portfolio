@@ -35,42 +35,6 @@ body {
   align-items: center;
   gap: 1.25rem;
 }
-
-.burger {
-  border: none;
-  background-color: transparent;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 8px 0;
-  cursor: pointer;
-}
-
-.burger svg {
-  padding: 8px 12px;
-  width: 22px;
-  height: 22px;
-}
-
-.burger-icon path,
-.close-icon path {
-  stroke: var(--primary);
-  stroke-width: 2;
-}
-
-.close-icon {
-  display: none;
-}
-
-.burger.active .burger-icon {
-  display: none;
-}
-
-.burger.active .close-icon {
-  display: block;
-}
-
-
 .navbar-profile {
   display: flex;
   align-items: center;
@@ -88,12 +52,15 @@ body {
 
 
         .profile-text h1 {
+          margin: 0;
+          padding:0;
             font-size: 1.2rem;
             font-weight: 500;
         }
 
         .profile-text p {
           margin: 0;
+          padding:0;
           font-size: .9rem;
           color: var(--secondary);
         }
@@ -126,6 +93,43 @@ body {
         .nav-link:hover {
             background: #f0f0f0;
         }
+
+.burger {
+  border: none;
+  background-color: transparent;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0;
+  cursor: pointer;
+}
+
+.burger svg {
+  padding: 8px 12px;
+  width: 22px;
+  height: 22px;
+}
+
+.burger-icon path,
+.close-icon path {
+  stroke: var(--secondary);
+  stroke-width: 1.5;
+}
+
+.close-icon {
+  display: none;
+}
+
+.burger.active .burger-icon {
+  display: none;
+}
+
+.burger.active .close-icon {
+  display: block;
+}
+
+
+
 
 @media (max-width: 768px) {
   .navbar {
