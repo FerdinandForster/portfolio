@@ -1,3 +1,30 @@
+// Navbar
+const burger = document.getElementById('burger');
+        const navMenu = document.getElementById('navMenu');
+
+        burger.addEventListener('click', () => {
+            burger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Schließe das Menü beim Klick auf einen Link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Schließe das Menü beim Klick außerhalb
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar')) {
+                burger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+
+
 
 //Accordion
 const accordions = document.querySelectorAll('.accordion');
