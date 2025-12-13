@@ -293,7 +293,7 @@ footer {
 
     .footer-center a {
       text-decoration: none;
-      color: var(--secondary);
+      color: var(--primary);
       font-size: .8rem;
       transition: color 0.2s;
       display: inline-flex;
