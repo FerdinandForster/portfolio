@@ -1,136 +1,86 @@
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ferdinand Forster | Test</title>
-    <link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mobile-container {
+  max-width: 480px;
+  margin: auto;
+  background-color: #555;
+  height: 500px;
+  color: white;
+  border-radius: 10px;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a.icon {
+  float: right;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
 </head>
 <body>
-    <header>
-        <!-- Tab links -->
-<div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'Projects')">Projekte</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Informationen</button>
+
+
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" class="active">Logo</a>
+  <div id="myLinks">
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
-<!-- Tab content -->
-<div id="Projects" class="tabcontent">
-  <h2>Projekte</h2>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="tabcontent">
-  <h2>Über</h2>
-      <p>Derzeit studiere ich User Experience Design (B.Sc.) an der Technischen Hochschule in Ingolstadt im siebten Semester.</p> 
-      <div class="accordion-wrapper">
-    <div class="accordion-item">
-        <button class="accordion" tabindex="0" aria-expanded="false">
-            <div class="accordion-content-wrapper">
-                <div class="accordion-text">
-                    <h3 class="accordion-title">
-                        Technische Hochschule Ingolstadt
-                        <span class="chevron" aria-hidden="true"></span>
-                    </h3>
-                    <div class="accordion-subtitle">B.Sc., User Experience Design</div>
-                </div>
-                <div class="accordion-date">Okt 2022 - Feb 2026</div>
-            </div>
-        </button>
-        <div class="panel">
-            <p>
-                Der Studiengang User Experience Design kombiniert Design, Psychologie und Technologie. 
-                Studierende lernen, nutzerzentrierte digitale Produkte und Services zu gestalten.
-            </p>
-             <a class="button" href=""download>Zeugnis<img
-           src="/assets/download_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-          class="download-symbol"
-          alt="Link icon"></a>
-        </div>
-    </div>
-
-     <div class="accordion-item">
-        <button class="accordion" tabindex="0" aria-expanded="false">
-            <div class="accordion-content-wrapper">
-                <div class="accordion-text">
-                    <h3 class="accordion-title">Audi AG</h3>
-                    <div class="accordion-subtitle">Praktikant</div>
-                </div>
-                <div class="accordion-date">Sep 2024 - Mär 2025</div>
-            </div>
-        </button>
-        <div class="panel">
-            <p>
-                In der Abteilung „Steuerung Entwicklung User Interface“ war ich an der
-          Entwicklung einer gesamtheitlichen 3D-HMI für ein innovatives
-          Interieurkonzept der PPE-Plattform beteiligt. Mit Blender habe ich
-          3D-Assets und Animationen erstellt und im UI/UX-Design unterstützt.
-            </p>
-            <a class="button" href="assets/praktikumszeugnis.pdf" download>Praktikumszeugnis<img
-           src="/assets/download_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-          class="download-symbol"
-          alt="Link icon"></a>
-          </a>
-        </div>
-    </div>
-
-      <div class="accordion-item">
-        <button class="accordion" tabindex="0" aria-expanded="false">
-            <div class="accordion-content-wrapper">
-                <div class="accordion-text">
-                    <h3 class="accordion-title">Bayerisches Rotes Kreuz</h3>
-                    <div class="accordion-subtitle">Rettungssanitäter</div>
-                </div>
-                <div class="accordion-date">Sep 2021 - Sep 2022</div>
-            </div>
-        </button>
-        <div class="panel">
-            <p>
-                Im Rahmen meines Freiwilligen Sozialen Jahres konnte ich viele
-          Erfahrungen im Umgang mit Menschen und in der Arbeitswelt sammeln. Das
-          FSJ habe ich mit der Qualifikation als Rettungssanitäter
-          abgeschlossen.
-            </p>
-            <a class="button" href="assets/bescheinigung_FSJ.pdf" download>Bescheinigung<img
-           src="/assets/download_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-          class="download-symbol"
-          alt="Link icon"></a>
-        </div>
-    </div>
-
-          <div class="accordion-item">
-        <button class="accordion" tabindex="0" aria-expanded="false">
-            <div class="accordion-content-wrapper">
-                <div class="accordion-text">
-                    <h3 class="accordion-title">
-                        Armin-Knab-Gymnasium Kitzingen</h3>
-                    <div class="accordion-subtitle">Abitur</div>
-                </div>
-                <div class="accordion-date">Sep 2013 - Jul 2021</div>
-            </div>
-        </button>
-        <div class="panel">
-            <p>
-                Mitglied im Schulgarten, Wahlfächer Film AG
-            </p>
-            <a class="button" href="assets/zeugnis_allgemeine-hochschulreife.pdf" download>Zeugnis<img
-           src="/assets/download_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-          class="download-symbol"
-          alt="Link icon"></a>
-        </div>
-    </div>
-     <a class="section-button" href="assets/lebenslauf.pdf" download>Lebenslauf
-            <img
-           src="/assets/download_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-          class="download-symbol"
-          alt="Link icon"></a>
-      </div>
-      <h3>Hobbys</h3>
-      <p>Außerhalb des UX Designs begeistere ich mich für Segelfliegen, Laufen, Skifahren und Rennradfahren.</p>    
-</div>
-</header>
 
 
-<script src="script.js"></script>
+
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
 </body>
 </html>
-

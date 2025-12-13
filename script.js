@@ -1,117 +1,15 @@
-// Navbar
-const burger = document.getElementById('burger');
-const navMenu = document.getElementById('navMenu');
-const profileText = document.querySelector('.profile-text');
-const navbar = document.querySelector('.navbar');
-
-if (burger && navMenu && navbar) {
-  const setMenuState = (isOpen) => {
-    burger.classList.toggle('active', isOpen);
-    navMenu.classList.toggle('active', isOpen);
-    burger.setAttribute('aria-expanded', String(isOpen));
-    burger.setAttribute('aria-label', isOpen ? 'Navigation schließen' : 'Navigation öffnen');
-    if (profileText) {
-      profileText.classList.toggle('is-hidden', isOpen);
-    }
-  };
-
-  burger.addEventListener('click', (event) => {
-    event.stopPropagation();
-    setMenuState(!burger.classList.contains('active'));
-  });
-
-  // Schließe das Menü beim Klick auf einen Link
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => setMenuState(false));
-  });
-
-  // Schließe das Menü beim Klick außerhalb
-  document.addEventListener('click', (e) => {
-    if (!navbar.contains(e.target)) {
-      setMenuState(false);
-    }
-  });
+//Navigation
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
 }
 
 
-
-
-//Accordion
-const accordions = document.querySelectorAll('.accordion');
-
-        accordions.forEach(accordion => {
-            accordion.addEventListener('click', function() {
-                this.classList.toggle('active');
-                
-                const panel = this.nextElementSibling;
-                
-                if (panel.classList.contains('show')) {
-                    panel.classList.remove('show');
-                } else {
-                    panel.classList.add('show');
-                }
-            });
-        });
-//Carousel
-const carousel = document.getElementById('carousel');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    
-    let isDragging = false;
-    let startPos = 0;
-    let prevTranslate = 0;
-
-    // Touch Events
-    carousel.addEventListener('touchstart', startDrag);
-    carousel.addEventListener('touchmove', drag);
-    carousel.addEventListener('touchend', endDrag);
-
-    // Scroll Event
-    carousel.addEventListener('scroll', updateButtons);
-
-    function startDrag(e) {
-      isDragging = true;
-      carousel.classList.add('grabbing');
-      startPos = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-      startPos -= carousel.offsetLeft;
-      prevTranslate = carousel.scrollLeft;
-    }
-
-    function drag(e) {
-      if (!isDragging) return;
-      e.preventDefault();
-      
-      const currentPosition = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-      const x = currentPosition - carousel.offsetLeft;
-      const walk = (x - startPos) * 2;
-      carousel.scrollLeft = prevTranslate - walk;
-    }
-
-    function endDrag() {
-      isDragging = false;
-      carousel.classList.remove('grabbing');
-    }
-
-    // Arrow Navigation
-    prevBtn.addEventListener('click', () => {
-      carousel.scrollBy({ left: -360, behavior: 'smooth' });
-    });
-
-    nextBtn.addEventListener('click', () => {
-      carousel.scrollBy({ left: 360, behavior: 'smooth' });
-    });
-
-    function updateButtons() {
-      const scrollLeft = carousel.scrollLeft;
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-      
-      prevBtn.disabled = scrollLeft <= 0;
-      nextBtn.disabled = scrollLeft >= maxScroll - 1;
-    }
-
-    updateButtons();
-
-
+// Modal Functionality
 // connect project-cards and modals
 document.querySelectorAll(".project-card").forEach((card) => {
   card.addEventListener("click", () => {
