@@ -8,7 +8,7 @@ function myFunction() {
   }
 }
 
-//Accordion
+// Accordion Functionality
 const accordions = document.querySelectorAll('.accordion');
 
         accordions.forEach(accordion => {
@@ -54,6 +54,8 @@ window.addEventListener("click", (event) => {
     document.body.style.overflow = "auto";
   }
 });
+
+
 // Filter Functionality
 const filterButtons = document.querySelectorAll(".filter-btn");
 const projectCards = document.querySelectorAll(".project-card");
@@ -71,9 +73,7 @@ filterButtons.forEach((button) => {
       if (filterValue === "all") {
         card.classList.remove("hidden");
       } else {
-        const cardCategory = card
-          .querySelector(".tag")
-          .getAttribute("data-category");
+        const cardCategory = card.getAttribute("data-category");
         if (cardCategory === filterValue) {
           card.classList.remove("hidden");
         } else {
@@ -82,7 +82,5 @@ filterButtons.forEach((button) => {
       }
     });
 
-    // Update carousel buttons after filtering
-    updateButtons();
   });
 });

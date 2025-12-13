@@ -247,21 +247,51 @@ section {
 
 
 /*Projekte*/
-.project-card {
-  display: flex;
-  width: 335px;
-  padding: 20px 0;
-  align-items: center;
-  gap: 31px;
+.projects-wrapper {
+  display: grid;
+  gap: 1rem;
 }
+
+.project-card {
+  margin: 1rem 0;
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+  flex: 1;
+  justify-content: space-between;
+  gap: 6px;
+  border-bottom: 5px var(--color-stroke-default);
+}
+.project-card.hidden {
+  display: none;
+}
+
 
 .project-text {
   display: flex;
-  padding-top: 10px;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  flex: 1 0 0;
+  gap: 0px;
+  letter-spacing: -2%;
+}
+
+.project-title {
+  font-size: var(--font-size-medium);
+  display: flex;
+  align-items: center;
+  margin: 0;
+  gap: 8px;
+  font-weight: 400;
+}
+
+.project-subtitle {
+  font-size: var(--font-size-small);
+  font-weight: 300;
+  color: var(--secondary);
 }
 
 .project-image {
@@ -271,7 +301,8 @@ section {
   border-radius: var(--border-radius);
   object-fit: cover;
 }
-    
+
+
 
 
 /*Modal*/
