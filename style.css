@@ -51,7 +51,7 @@ header {
   overflow: hidden;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1;
   position: fixed;
   background-color: var(--color-bg-default);
 }
@@ -132,7 +132,11 @@ section {
   display: flex;
   gap: 10px;
   overflow-x: auto;
-  margin-bottom: 16px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.filter-buttons::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 .filter-btn {
   font-size: var(--font-size-small);
@@ -268,66 +272,6 @@ section {
   object-fit: cover;
 }
     
-/*Modal*/
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 2; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: hidden; /* Enable scroll if needed */
-  backdrop-filter: blur(20px);
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: #fefefe;
-  margin: auto;
-  width: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.modal-body {
-  overflow-y: auto;
-  flex-grow: 1;
-  padding: 80px 10% 100px;
-}
-.close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 0;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: white;
-  color: var(--secondary);
-  border: 1px solid var(--tertiary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-.close:hover {
-  background: var(--element-primary);
-  border-color: var(--secondary);
-}
-.close svg {
-  fill: var(--secondary);
-  width: 16px;
-  height: 16px;
-  pointer-events: none; /* Klicks gehen zum Button */
-}
 
 
 /*Modal*/
@@ -335,7 +279,6 @@ section {
   display: none;
   position: fixed;
   z-index: 10;
-  padding-top: 100px;
   left: 0;
   top: 0;
   width: 100%;
@@ -347,47 +290,44 @@ section {
 
 .modal-content {
   position: fixed;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-height: 90vh;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #fefefe;
+  background-color: var(--color-bg-default);
   margin: auto;
-  width: 60%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 8px;
 }
 .modal-body {
   overflow-y: auto;
   flex-grow: 1;
-  padding: 40px 65px 40px;
+  padding: 40px 20px 40px;
 }
 .close {
   position: absolute;
   top: 20px;
   right: 20px;
-  background-color: white;
+  background-color: var(--element-secondary);
   border: none;
   border-radius: 50%;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   padding: 0;
-  background-color: var(--element-primary);
 }
-.close:hover {
-  background-color: var(--element-secondary);
-}
+
 .close svg {
-  fill: black;
-  width: 16px;
-  height: 16px;
-  pointer-events: none;
+  width: 23px;
+  height: 23px;
+}
+
+.close svg path {
+  fill: none;
+  stroke: var(--secondary);
+  stroke-width: 2.5;
+  stroke-linecap: round;
 }
 
 
