@@ -8,171 +8,146 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-        <!--Navbar-->
-    <nav class="navbar">
-        <a href="index.html" class="navbar-profile">
-            <img class="profile-picture" src="assets/profilbild.jpg" alt="Porträt eines jungen Mannes mit kurzem braunem Haar und grauem Oberteil."/>
-            <div class="profile-text">
-                <h1>Ferdinand Forster</h1>
-                <p>User Experience Designer</p>
-            </div>
-        </a>
+<header>
+  <div class="header-container">
+    <a class="profile" href="index.html">
+      <img class="profile-picture" src="assets/profilbild.jpg" alt="Porträt eines jungen Mannes mit kurzem braunem Haar und grauem Oberteil.">
+      <div class="profile-info">
+      <h1 class="profile-info-title">Ferdinand Forster</h1>
+      <p class="profile-info-description">User Experience Designer</p>
+      </div>
+    </a>
+    <div class="burger-menu-button" onclick="toggleMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="17" height="14" viewBox="0 0 17 14" fill="none">
+      <path d="M15.9199 12C16.472 12.0003 16.9199 12.4479 16.9199 13C16.9199 13.5521 16.472 13.9997 15.9199 14H1.00098C0.448692 14 0 13.5523 0 13C0 12.4477 0.448692 12 1.00098 12H15.9199ZM15.9199 6C16.472 6.00026 16.9199 6.44788 16.9199 7C16.9199 7.55212 16.472 7.99974 15.9199 8H1.00098C0.448692 8 0 7.55228 0 7C0 6.44772 0.448692 6 1.00098 6H15.9199ZM15.9199 0C16.472 0.000263794 16.9199 0.447878 16.9199 1C16.9199 1.55212 16.472 1.99974 15.9199 2H1.00098C0.448692 2 0 1.55228 0 1C0 0.447715 0.448692 0 1.00098 0H15.9199Z" fill="#757676"/>
+      </svg>
+    </div>
+  </div>
+</header>
 
-        <div class="nav-controls">
-          <ul class="nav-menu" id="navMenu">
-              <li><a href="index.html" class="nav-link">Projekte</a></li>
-              <li><a href="about.html" class="nav-link-active">Über</a></li>
-              <li><a href="#contact" class="nav-link">Kontakt</a></li>
-          </ul>
-          <button class="burger" id="burger" aria-label="Navigation öffnen" aria-controls="navMenu" aria-expanded="false">
-            <svg class="burger-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round" />
-            </svg>
-            <svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 6l12 12M18 6L6 18" stroke-linecap="round" />
-            </svg>
-          </button>
-        </div>
-    </nav>
-    
-    <!--Info-->
-    <section id="info">
-      <h2>Über</h2>
-      <p>Derzeit studiere ich User Experience Design (B.Sc.) an der Technischen Hochschule in Ingolstadt im siebten Semester.</p> 
-      <div class="accordion-wrapper">
+<main>
+<div class="hero-wrapper">
+  <h2>Über Ferdi</h2>
+  <p>Derzeit studiere ich User Experience Design (B.Sc.) an der Technischen Hochschule in Ingolstadt im siebten Semester.</p>
+</div>
+
+<section>
+  <h3 class="h3-title">Erfahrung</h3>
+  <div class="accordion-wrapper">
     <div class="accordion-item">
-        <button class="accordion" tabindex="0" aria-expanded="false">
-            <div class="accordion-content-wrapper">
-                <div class="accordion-text">
-                    <h3 class="accordion-title">
-                        Technische Hochschule Ingolstadt
-                        <span class="chevron" aria-hidden="true"></span>
-                    </h3>
-                    <div class="accordion-subtitle">B.Sc., User Experience Design</div>
-                </div>
-                <div class="accordion-date">Okt 2022 - Feb 2026</div>
-            </div>
-        </button>
-        <div class="panel">
-            <p>
-                Der Studiengang User Experience Design kombiniert Design, Psychologie und Technologie. 
-                Studierende lernen, nutzerzentrierte digitale Produkte und Services zu gestalten.
-            </p>
-             <a class="button" href=""download>Zeugnis<img
-           src="/assets/download_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-          class="download-symbol"
-          alt="Link icon"></a>
-        </div>
+    <button class="accordion" tabindex="0" aria-expanded="false">
+    <div class="accordion-content-wrapper">
+    <div class="accordion-text">
+    <h3 class="accordion-title">Technische Hochschule Ingolstadt<span class="chevron" aria-hidden="true"></span></h3>
+    <div class="accordion-subtitle">User Experience Design - B.Sc.</div>
+    </div>
+    <div class="accordion-date">Okt 22 - Feb 26</div>
+    </div>
+    </button>
+    <div class="panel">
+    <p>
+    Der Studiengang User Experience Design kombiniert Design, Psychologie und Technologie. 
+    Studierende lernen, nutzerzentrierte digitale Produkte und Services zu gestalten.
+    </p>
+    <a class="button" href="assets/"download>Zeugnis</a>
+    </div>
     </div>
 
-     <div class="accordion-item">
-        <button class="accordion" tabindex="0" aria-expanded="false">
-            <div class="accordion-content-wrapper">
-                <div class="accordion-text">
-                    <h3 class="accordion-title">Audi AG</h3>
-                    <div class="accordion-subtitle">Praktikant</div>
-                </div>
-                <div class="accordion-date">Sep 2024 - Mär 2025</div>
-            </div>
-        </button>
-        <div class="panel">
-            <p>
-                In der Abteilung „Steuerung Entwicklung User Interface“ war ich an der
-          Entwicklung einer gesamtheitlichen 3D-HMI für ein innovatives
-          Interieurkonzept der PPE-Plattform beteiligt. Mit Blender habe ich
-          3D-Assets und Animationen erstellt und im UI/UX-Design unterstützt.
-            </p>
-            <a class="button" href="assets/praktikumszeugnis.pdf" download>Praktikumszeugnis<img
-           src="/assets/download_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-          class="download-symbol"
-          alt="Link icon"></a>
-          </a>
-        </div>
+    <div class="accordion-item">
+    <button class="accordion" tabindex="0" aria-expanded="false">
+    <div class="accordion-content-wrapper">
+    <div class="accordion-text">
+    <h3 class="accordion-title">Audi AG</h3>
+    <div class="accordion-subtitle">Praktikant</div>
+    </div>
+    <div class="accordion-date">Sep 24 - Mär 25</div>
+    </div>
+    </button>
+    <div class="panel">
+    <p>
+    In der Abteilung „Steuerung Entwicklung User Interface“ war ich an der
+    Entwicklung einer gesamtheitlichen 3D-HMI für ein innovatives
+    Interieurkonzept der PPE-Plattform beteiligt. Mit Blender habe ich
+    3D-Assets und Animationen erstellt und im UI/UX-Design unterstützt.
+    </p>
+    <a class="button" href="assets/praktikumszeugnis.pdf" download>Praktikumszeugnis</a>
+    </a>
+    </div>
     </div>
 
-      <div class="accordion-item">
-        <button class="accordion" tabindex="0" aria-expanded="false">
-            <div class="accordion-content-wrapper">
-                <div class="accordion-text">
-                    <h3 class="accordion-title">Bayerisches Rotes Kreuz</h3>
-                    <div class="accordion-subtitle">Rettungssanitäter</div>
-                </div>
-                <div class="accordion-date">Sep 2021 - Sep 2022</div>
-            </div>
-        </button>
-        <div class="panel">
-            <p>
-                Im Rahmen meines Freiwilligen Sozialen Jahres konnte ich viele
-          Erfahrungen im Umgang mit Menschen und in der Arbeitswelt sammeln. Das
-          FSJ habe ich mit der Qualifikation als Rettungssanitäter
-          abgeschlossen.
-            </p>
-            <a class="button" href="assets/bescheinigung_FSJ.pdf" download>Bescheinigung<img
-           src="/assets/download_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-          class="download-symbol"
-          alt="Link icon"></a>
-        </div>
+    <div class="accordion-item">
+    <button class="accordion" tabindex="0" aria-expanded="false">
+    <div class="accordion-content-wrapper">
+    <div class="accordion-text">
+    <h3 class="accordion-title">Bayerisches Rotes Kreuz</h3>
+    <div class="accordion-subtitle">Rettungssanitäter</div>
+    </div>
+    <div class="accordion-date">Sep 21 - Sep 22</div>
+    </div>
+    </button>
+    <div class="panel">
+    <p>
+    Im Rahmen meines Freiwilligen Sozialen Jahres konnte ich viele
+    Erfahrungen im Umgang mit Menschen und in der Arbeitswelt sammeln. Das
+    FSJ habe ich mit der Qualifikation als Rettungssanitäter
+    abgeschlossen.
+    </p>
+    <a class="button" href="assets/bescheinigung_FSJ.pdf" download>Bescheinigung</a>
+    </div>
     </div>
 
-          <div class="accordion-item">
-        <button class="accordion" tabindex="0" aria-expanded="false">
-            <div class="accordion-content-wrapper">
-                <div class="accordion-text">
-                    <h3 class="accordion-title">
-                        Armin-Knab-Gymnasium Kitzingen</h3>
-                    <div class="accordion-subtitle">Abitur</div>
-                </div>
-                <div class="accordion-date">Sep 2013 - Jul 2021</div>
-            </div>
-        </button>
-        <div class="panel">
-            <p>
-                Mitglied im Schulgarten, Wahlfächer Film AG
-            </p>
-            <a class="button" href="assets/zeugnis_allgemeine-hochschulreife.pdf" download>Zeugnis<img
-           src="/assets/download_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-          class="download-symbol"
-          alt="Link icon"></a>
-        </div>
+    <div class="accordion-item">
+    <button class="accordion" tabindex="0" aria-expanded="false">
+    <div class="accordion-content-wrapper">
+    <div class="accordion-text">
+    <h3 class="accordion-title">
+    Armin-Knab-Gymnasium Kitzingen</h3>
+    <div class="accordion-subtitle">Abitur</div>
     </div>
-     <a class="section-button" href="assets/lebenslauf.pdf" download>Lebenslauf
-            <img
-           src="/assets/download_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
-          class="download-symbol"
-          alt="Link icon"></a>
-      </div>
-      <h3>Hobbys</h3>
-      <p>Außerhalb des UX Designs begeistere ich mich für Segelfliegen, Laufen, Skifahren und Rennradfahren.</p>    
-    </section>
+    <div class="accordion-date">Sep 13 - Jul 21</div>
+    </div>
+    </button>
+    <div class="panel">
+    <p>
+    Mitglied im Schulgarten, Wahlfächer Film AG
+    </p>
+    <a class="button" href="assets/zeugnis_allgemeine-hochschulreife.pdf" download>Zeugnis<img
+    src="/assets/download_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.svg"
+    class="download-symbol"
+    alt="Link icon"></a>
+    </div>
+    </div>
+  </div>
+</section>
 
-        <!--Footer-->
-    <footer id="contact">
-    <div class="footer-top">
-      <!--
-      <h2>Kontakt</h2>
-      <p>Bei Fragen stehe ich Ihnen gerne zur Verfügung.</p> -->
+<section>
+<h3>Kenntnisse</h3>
+<p>Außerhalb des UX Designs begeistere ich mich für Segelfliegen, Laufen, Skifahren und Rennradfahren.</p>    
+</section>
+
+</main>
+<footer>
+  <div class="footer-center">
+    <div class="footer-center-left">
+      <a href="index.html">Projekte</a>
+      <a href="about.html">Über</a>
+      <a href="contact.html">Kontakt</a>
     </div>
-    <div class="footer-center">
-        <div class="footer-center-left">
-          <a href="#index.html">Projekte</a>
-          <a href="about.html">Info</a>
-        </div>
-        <div class="footer-center-right">
-          <a href="mailto:ferdinand.forster@icloud.com">E-Mail<img src="/assets/link-arrow.svg" class="arrow-right-up" alt="Link icon"/></a>
-          <a href="https://www.linkedin.com/in/ferdinand-forster-902121269/" target="_blank" rel="noopener noreferrer">LinkedIn<img src="/assets/link-arrow.svg" class="arrow-right-up" alt="Link icon"/></a>
-        </div>
+    <div class="footer-center-right">
+      <a href="">0,08g CO₂ pro Besuch</a>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-left">
-          <a href="accessibility.html">Barrierefreiheitserklärung</a>
-          <a href="imprint.html">Impressum</a>
-          <a href="privacy.html">Datenschutz</a>
-        </div>
-      <div class="footer-bottom-right">
-        <p>Ferdinand Forster © 2025 Alle Rechte vorbehalten</p>
-      </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      <a href="legal.html">Impressum</a>
+      <a href="legal.html">Datenschutz</a>
+      <a href="legal.html">Barrierefreiheit</a>
     </div>
-    </footer>
+    <div class="footer-bottom-right">
+      <p>© 2025</p>
+    </div>
+  </div>
+</footer>
 
     <script src="script.js"></script>
   </body>

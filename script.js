@@ -8,6 +8,23 @@ function myFunction() {
   }
 }
 
+//Accordion
+const accordions = document.querySelectorAll('.accordion');
+
+        accordions.forEach(accordion => {
+            accordion.addEventListener('click', function() {
+                this.classList.toggle('active');
+                
+                const panel = this.nextElementSibling;
+                
+                if (panel.classList.contains('show')) {
+                    panel.classList.remove('show');
+                } else {
+                    panel.classList.add('show');
+                }
+            });
+        });
+
 
 // Modal Functionality
 // connect project-cards and modals
