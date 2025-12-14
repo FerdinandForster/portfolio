@@ -47,6 +47,9 @@ body {
 }
 
 /* Header */
+.header-container {
+  position: relative;
+}
 header {
   overflow: hidden;
   top: 0;
@@ -126,6 +129,131 @@ section {
 .burger-menu-button:hover{
   background-color: var(--element-secondary);
 }
+
+.close-menu-button{
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: 0;
+  color: var(--secondary);
+  background-color: var(--element-secondary);
+  border-radius: var(--border-radius-lg);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.close-menu-button svg{
+  width: 23px;
+  height: 23px;
+  display: block;
+}
+
+.burger-menu-button,
+.close-menu-button {
+  cursor: pointer;
+}
+
+/* Close-Button initial versteckt */
+.close-menu-button {
+  display: none;
+}
+
+/* Menü offen */
+.menu-open .burger-menu-button {
+  display: none;
+}
+
+.menu-open .close-menu-button {
+  display: block;
+}
+
+
+    /* Navigation Menu - innerhalb des Headers, über die ganze Breite */
+#myLinks {
+  display: none;              /* bleibt für Toggle */
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;                   /* volle Breite */
+  height: 40px;
+  background-color: var(--element-secondary);
+
+   /*  display: flex;              Flexbox aktivieren */
+  justify-content: flex-end;  /* Links nach rechts */
+  align-items: center;
+
+  margin-right: 65px;        /* Abstand zu Burger-Menü */
+  margin-left: 12px;
+  padding: 8px 0px;
+  padding-right: 8px;
+
+  border-radius: 100px;
+}
+#myLinks.is-open{
+  display: flex;
+}
+
+    #myLinks a {
+      display: inline-block;
+      color: var(--primary);
+      padding: 10px 16px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 420;
+      transition: background-color 0.2s ease;
+      border-radius: 100px;
+    }
+
+    #myLinks a:hover, #myLinks a:active {
+      background-color: var(--color-bg-default);
+    }
+
+    /* Profile ausblenden wenn Menü offen ist */
+    .profile-info.hidden {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    /* Navigation Menu - Version 1
+    #myLinks {
+      display: none;
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--element-secondary);
+      border-radius: 1000px;
+      padding: 8px;
+      padding-left: 100px;
+    }
+
+    #myLinks a {
+      display: inline-block;
+      color: var(--primary);
+      padding: 8px 12px;
+      text-decoration: none;
+      font-size: var(--font-size-medium);
+      transition: background-color 0.2s ease;
+      border-radius: 1000px;
+    }
+
+    #myLinks a:hover {
+      background-color: var(--element-primary);
+      color: white;
+    }
+
+    .profile-info.hidden {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    */
 
 /*Projekt-Section*/
 .filter-buttons {

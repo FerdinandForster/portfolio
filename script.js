@@ -1,11 +1,31 @@
-//Navigation
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
+  /*
+  function toggleMenu() {
+    var menu = document.getElementById("myLinks");
+    var profile = document.getElementById("profile");
+    
+    if (menu.style.display === "block") {
+      menu.style.display = "none";
+      profile.classList.remove("hidden");
+    } else {
+      menu.style.display = "block";
+      profile.classList.add("hidden");
+    }
   }
+*/
+  function toggleMenu() {
+  const menu = document.getElementById("myLinks");
+  const profile = document.querySelector(".profile-info"); // oder richtiges Element wählen
+
+  menu.classList.toggle("is-open");
+  profile.classList.toggle("hidden");
+}
+
+function toggleMenu() {
+  const menu = document.getElementById("myLinks");
+  const header = document.querySelector("header");
+
+  menu.classList.toggle("is-open");
+  header.classList.toggle("menu-open");
 }
 
 // Accordion Functionality
