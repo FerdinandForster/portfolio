@@ -1,31 +1,28 @@
-  /*
-  function toggleMenu() {
-    var menu = document.getElementById("myLinks");
-    var profile = document.getElementById("profile");
-    
-    if (menu.style.display === "block") {
-      menu.style.display = "none";
-      profile.classList.remove("hidden");
+// Active Link Highlighting
+document.addEventListener("DOMContentLoaded", () => {
+  const links = document.querySelectorAll("#myLinks .link-btn");
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  links.forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage) {
+      link.classList.add("active");
     } else {
-      menu.style.display = "block";
-      profile.classList.add("hidden");
+      link.classList.remove("active");
     }
-  }
-*/
-  function toggleMenu() {
-  const menu = document.getElementById("myLinks");
-  const profile = document.querySelector(".profile-info"); // oder richtiges Element wählen
+  });
+});
 
-  menu.classList.toggle("is-open");
-  profile.classList.toggle("hidden");
-}
-
+// Menu Toggle Functionality
 function toggleMenu() {
   const menu = document.getElementById("myLinks");
   const header = document.querySelector("header");
+  const profile = document.querySelector(".profile-info");
+
 
   menu.classList.toggle("is-open");
   header.classList.toggle("menu-open");
+  profile.classList.toggle("hidden");
 }
 
 // Accordion Functionality

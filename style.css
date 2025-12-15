@@ -116,41 +116,51 @@ section {
 }
 
 .burger-menu-button{
+  border: none;
+  background-color: transparent;
   display: flex;
   width: 40px;
+  height: 40px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 4px;
   align-self: stretch;
-  aspect-ratio: 1/1;
   border-radius: var(--border-radius-lg);
+  color: var(--secondary);
+}
+.burger-menu-button svg{
+  width: 17px;
+  height: 14px;
+  fill: currentColor;
 }
 .burger-menu-button:hover{
   background-color: var(--element-secondary);
 }
 
 .close-menu-button{
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  margin: 0;
+  border: none;
   color: var(--secondary);
   background-color: var(--element-secondary);
   border-radius: var(--border-radius-lg);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  cursor: pointer;
+  width:40px;
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .close-menu-button svg{
-  width: 23px;
-  height: 23px;
-  display: block;
+  width:24px;
+  height:24px;
+  display:block;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
+
 
 .burger-menu-button,
 .close-menu-button {
@@ -168,95 +178,85 @@ section {
 }
 
 .menu-open .close-menu-button {
-  display: block;
-}
-
-
-    /* Navigation Menu - innerhalb des Headers, über die ganze Breite */
-#myLinks {
-  display: none;              /* bleibt für Toggle */
-  position: absolute;
-  top: 12px;
-  left: 0;
-  right: 0;                   /* volle Breite */
-  height: 40px;
-  background-color: var(--element-secondary);
-
-   /*  display: flex;              Flexbox aktivieren */
-  justify-content: flex-end;  /* Links nach rechts */
-  align-items: center;
-
-  margin-right: 65px;        /* Abstand zu Burger-Menü */
-  margin-left: 12px;
-  padding: 8px 0px;
-  padding-right: 8px;
-
-  border-radius: 100px;
-}
-#myLinks.is-open{
   display: flex;
 }
 
-    #myLinks a {
-      display: inline-block;
-      color: var(--primary);
-      padding: 10px 16px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 420;
-      transition: background-color 0.2s ease;
-      border-radius: 100px;
-    }
 
-    #myLinks a:hover, #myLinks a:active {
-      background-color: var(--color-bg-default);
-    }
+/* Keyframes + Easing */
+@keyframes stack-to-left {
+  0% { transform: translate(12px); opacity: 0; }
+  60% { opacity: 1; }
+  100% { transform: translate(0); opacity: 1; }
+}
 
-    /* Profile ausblenden wenn Menü offen ist */
-    .profile-info.hidden {
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.2s ease, visibility 0.2s ease;
-    }
+:root {
+  --snappy-animation: cubic-bezier(.33, 1.6, .66, 1);
+}
 
-    /* Navigation Menu - Version 1
-    #myLinks {
-      display: none;
-      position: absolute;
-      right: 60px;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: var(--element-secondary);
-      border-radius: 1000px;
-      padding: 8px;
-      padding-left: 100px;
-    }
+/* Navigation Menu - innerhalb des Headers, über die ganze Breite */
+#myLinks {
+  display: none;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background-color: var(--element-secondary);
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 65px;
+  margin-left: 12px;
+  padding: 8px 0px;
+  padding-right: 8px;
+  border-radius: 100px;
+}
 
-    #myLinks a {
-      display: inline-block;
-      color: var(--primary);
-      padding: 8px 12px;
-      text-decoration: none;
-      font-size: var(--font-size-medium);
-      transition: background-color 0.2s ease;
-      border-radius: 1000px;
-    }
+/* Öffnen: Container animiert rein */
+#myLinks.is-open {
+  display: flex;
+  animation: .3s stack-to-left var(--snappy-animation);
+}
 
-    #myLinks a:hover {
-      background-color: var(--element-primary);
-      color: white;
-    }
+.link-btn {
+  display: inline-block;
+  color: var(--primary);
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 420;
+  transition: background-color 0.2s ease;
+  border-radius: 100px;
+}
 
-    .profile-info.hidden {
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.2s ease, visibility 0.2s ease;
-    }
+/* Öffnen: Links laufen gestaffelt rein */
+#myLinks.is-open .link-btn {
+  animation: .3s stack-to-left var(--snappy-animation);
+  animation-fill-mode: forwards;
+  transform: translate(12px);
+  opacity: 0;
+}
 
-    */
+/* Stagger (für 3 Links) */
+#myLinks.is-open .link-btn:nth-child(1) { animation-delay: .05s; }
+#myLinks.is-open .link-btn:nth-child(2) { animation-delay: .03s; }
+#myLinks.is-open .link-btn:nth-child(3) { animation-delay: .02s; }
+
+.link-btn.active,
+.link-btn:hover {
+  background-color: var(--color-bg-default);
+}
+    
+
+/* Profile ausblenden wenn Menü offen ist */
+.profile-info.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
 
 /*Projekt-Section*/
 .filter-buttons {
+  padding: 10px;
   display: flex;
   gap: 10px;
   overflow-x: auto;
