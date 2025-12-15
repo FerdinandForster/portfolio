@@ -25,22 +25,20 @@ function toggleMenu() {
   profile.classList.toggle("hidden");
 }
 
-// Accordion Functionality
+// Accordion Functionality (inkl. aria-expanded + aria-hidden)
 const accordions = document.querySelectorAll('.accordion');
 
-        accordions.forEach(accordion => {
-            accordion.addEventListener('click', function() {
-                this.classList.toggle('active');
-                
-                const panel = this.nextElementSibling;
-                
-                if (panel.classList.contains('show')) {
-                    panel.classList.remove('show');
-                } else {
-                    panel.classList.add('show');
-                }
-            });
-        });
+accordions.forEach((accordion) => {
+  accordion.addEventListener('click', function () {
+    const panel = this.nextElementSibling;
+    const isOpen = this.getAttribute('aria-expanded') === 'true';
+
+    // toggle state
+    this.setAttribute('aria-expanded', String(!isOpen));
+    panel.classList.toggle('show', !isOpen);
+    panel.setAttribute('aria-hidden', String(isOpen));
+  });
+});
 
 
 // Modal Functionality
