@@ -663,25 +663,33 @@ footer {
       text-align: right;
     }
 
-    .theme-control{
-    display: inline-flex;
-    padding: 1px;
-    border-radius: 999px;
-    background: var(--element-secondary);
-    border: 1px solid var(--color-stroke-default);
-    }
+/* robust im Footer (verhindert Überschreibungen durch globale button Styles) */
+footer .theme-control{
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px;
+  border-radius: 999px;
+  background: var(--element-secondary);
+  border: 1px solid var(--color-stroke-default);
+}
 
-    .theme-btn{
-    border: none;
-    background: transparent;
-    color: var(--primary);
-    font-size: .8rem;
-    padding: 4px 6px;
-    border-radius: 999px;
-    cursor: pointer;
-    }
+footer .theme-control .theme-btn{
+  -webkit-appearance: none;
+  appearance: none;
+  font: inherit;
+  line-height: 1;
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  font-size: .8rem;
+  padding: 4px 6px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+}
 
-.theme-btn[aria-pressed="true"]{
+footer .theme-control .theme-btn[aria-pressed="true"]{
   background: var(--color-bg-default);
 }
 
