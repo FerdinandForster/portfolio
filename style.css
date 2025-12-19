@@ -21,7 +21,7 @@
 
   --primary-dark: #e2e8f0;
   --secondary-dark: #757676;
-  --element-primary-dark: #1f1f22;
+  --element-primary-dark: #000000;
   --element-secondary-dark: #1f1f22;
   --bg-dark: #121212;
   --stroke-dark: #ffffff24;
@@ -327,6 +327,39 @@ section {
 .cta-btns {
   display: flex;
   gap: 1rem;
+}
+
+/* Kontakt Liste */
+.contact-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 1rem;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: var(--element-secondary);
+  text-decoration: none;
+  border-radius: 12px;
+}
+.contact-item:hover {
+  background-color: var(--element-primary);
+}
+.contact-item h4, p {
+  margin: 0;
+  font-weight: 300;
+  font-size: var(--font-size-medium);
+}
+.contact-item-icon {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+  color: var(--secondary);
+}
+.arrow-down {
+  transform: rotate(135deg);
 }
 
 /*Projekt-Section*/
