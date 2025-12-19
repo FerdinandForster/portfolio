@@ -99,3 +99,47 @@ filterButtons.forEach((button) => {
 
   });
 });
+
+// Theme: Auto (System) default + manual override
+function applyTheme(mode) {
+  const root = document.documentElement;
+
+  if (mode === "auto") {
+    root.removeAttribute("data-theme");     // folgt System
+    localStorage.removeItem("themeMode");
+  } else {
+    root.setAttribute("data-theme", mode);  // "light" | "dark"
+    localStorage.setItem("themeMode", mode);
+  }
+
+  updateThemeButtons(mode);
+}
+
+function getCurrentMode() {
+  return localStorage.getItem("themeMode") || "auto";
+}
+
+function updateThemeButtons(mode) {
+  document.querySelectorAll(".theme-btn").forEach(btn => {
+    btn.setAttribute("aria-pressed", btn.dataset.theme === mode ? "true" : "false");
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // init
+  const mode = getCurrentMode();
+  applyTheme(mode);
+
+  // clicks
+  document.querySelectorAll(".theme-btn").forEach(btn => {
+    btn.addEventListener("click", () => applyTheme(btn.dataset.theme));
+  });
+
+  // Wenn System wechselt: nur UI aktualisieren, wenn Auto aktiv ist
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (getCurrentMode() === "auto") {
+      document.documentElement.removeAttribute("data-theme"); // bleibt auto
+      updateThemeButtons("auto");
+    }
+  });
+});

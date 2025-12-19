@@ -1,18 +1,72 @@
 :root {
-  --primary: #090E24;
-  --secondary: #757676;
-  --element-primary: #090E24;
-  --element-secondary: #F6F7F9;
+
   --border-radius: 6px;
   --border-radius-lg: 10px;
-  --color-bg-default: #fff;
-  --color-stroke-default: #E3E3E3;
 
---font-size-large: 1.4rem;
---font-size-xlarge: 1.15rem;
---font-size-medium: 1rem;
---font-size-small: .8rem;
+  --font-size-large: 1.4rem;
+  --font-size-xlarge: 1.15rem;
+  --font-size-medium: 1rem;
+  --font-size-small: .8rem;
     }
+
+/* -----------------------------*/
+:root{
+  --primary-light: #090E24;
+  --secondary-light: #757676;
+  --element-primary-light: #090E24;
+  --element-secondary-light: #F6F7F9;
+  --bg-light: #ffffff;
+  --stroke-light: #E3E3E3;
+  --footer-bg-light: #fafafa;
+
+  --primary-dark: #e2e8f0;
+  --secondary-dark: #757676;
+  --element-primary-dark: #1f1f22;
+  --element-secondary-dark: #1f1f22;
+  --bg-dark: #121212;
+  --stroke-dark: #ffffff24;
+  --footer-bg-dark: #000000;
+
+  /* Default = Light */
+  --primary: var(--primary-light);
+  --secondary: var(--secondary-light);
+  --element-primary: var(--element-primary-light);
+  --element-secondary: var(--element-secondary-light);
+  --color-bg-default: var(--bg-light);
+  --color-stroke-default: var(--stroke-light);
+  --footer-bg: var(--footer-bg-light);
+
+  color-scheme: light;
+}
+
+/* Manuell Dark */
+:root[data-theme="dark"]{
+  --primary: var(--primary-dark);
+  --secondary: var(--secondary-dark);
+  --element-primary: var(--element-primary-dark);
+  --element-secondary: var(--element-secondary-dark);
+  --color-bg-default: var(--bg-dark);
+  --color-stroke-default: var(--stroke-dark);
+  --footer-bg: var(--footer-bg-dark);
+
+  color-scheme: dark;
+}
+
+/* Auto Dark (nur wenn kein data-theme gesetzt ist) */
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme]){
+    --primary: var(--primary-dark);
+    --secondary: var(--secondary-dark);
+    --element-primary: var(--element-primary-dark);
+    --element-secondary: var(--element-secondary-dark);
+    --color-bg-default: var(--bg-dark);
+    --color-stroke-default: var(--stroke-dark);
+    --footer-bg: var(--footer-bg-dark);
+
+    color-scheme: dark;
+  }
+}
+/* -----------------------------*/
 
 h2{
   margin: 0;
@@ -52,13 +106,16 @@ em {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, sans-serif;
-  margin: auto;
-  max-width: 60em;
+  margin: 0;
+  background-color: var(--color-bg-default);
 }
 
 /* Header */
 .header-container {
   position: relative;
+    max-width: 60em;
+  margin: 0 auto;       /* wichtig: zentriert */
+  padding: 20px;  
 }
 header {
   overflow: hidden;
@@ -76,7 +133,9 @@ header {
   padding-bottom: 2rem;
 }
 main {
-  margin: 0 20px;
+  max-width: 60em;
+  margin: 0 auto;       /* wichtig: zentriert */
+  padding: 0 20px;
 }
 section {
   margin-bottom: 3rem;
@@ -262,6 +321,12 @@ section {
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+/* Call to Action */
+.cta-btns {
+  display: flex;
+  gap: 1rem;
 }
 
 /*Projekt-Section*/
@@ -532,17 +597,27 @@ section {
 
 /* Footer */
 footer {
+  margin: 0 auto;       /* wichtig: zentriert */
+  padding: 0 20px;
+
   margin-top: 100px;
   padding: 6rem 20px 4rem; /*oben, links/rechts, unten */
   display: grid;
-  background-color: #fafafa;
+  background-color: var(--footer-bg);
 }
+.footer-center,
+.footer-bottom{
+  max-width: 60em;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .footer-center {
   display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-      gap: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 2rem;
 }
     .footer-center-left,
     .footer-center-right {
@@ -587,6 +662,28 @@ footer {
     .footer-bottom-right {
       text-align: right;
     }
+
+    .theme-control{
+    display: inline-flex;
+    padding: 1px;
+    border-radius: 999px;
+    background: var(--element-secondary);
+    border: 1px solid var(--color-stroke-default);
+    }
+
+    .theme-btn{
+    border: none;
+    background: transparent;
+    color: var(--primary);
+    font-size: .8rem;
+    padding: 4px 6px;
+    border-radius: 999px;
+    cursor: pointer;
+    }
+
+.theme-btn[aria-pressed="true"]{
+  background: var(--color-bg-default);
+}
 
     .footer-bottom a {
       text-decoration: none;
