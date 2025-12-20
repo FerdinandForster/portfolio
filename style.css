@@ -76,6 +76,7 @@ h2{
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.36px;
+  margin-bottom: 1rem;
 }
  h3{
   margin: 0;
@@ -85,7 +86,7 @@ h2{
   font-weight: 500;
   line-height: normal;
   letter-spacing: -0.36px;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
 }
 p {
   margin: 8px 0 0 0;
@@ -669,7 +670,7 @@ footer {
     .footer-center a {
       text-decoration: none;
       color: var(--primary);
-      font-size: .8rem;
+      font-size: var(--font-size-small);
       transition: color 0.2s;
       display: inline-flex;
       align-items: center;
@@ -715,7 +716,7 @@ footer .theme-control .theme-btn{
   border: 0;
   background: transparent;
   color: var(--primary);
-  font-size: .8rem;
+  font-size: var(--font-size-small);
   padding: 4px 6px;
   border-radius: 999px;
   cursor: pointer;
@@ -729,11 +730,11 @@ footer .theme-control .theme-btn[aria-pressed="true"]{
     .footer-bottom a {
       text-decoration: none;
       color: var(--secondary);
-      font-size: 0.7rem;
+      font-size: var(--font-size-small);
     }
 
     .footer-bottom-right p {
       margin: 0;
       color: var(--secondary);
-      font-size: 0.7rem;
+      font-size: var(--font-size-small);
     }
