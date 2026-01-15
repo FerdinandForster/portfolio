@@ -88,6 +88,9 @@ h2{
   line-height: normal;
   letter-spacing: -0.36px;
 }
+.h3-about{
+  margin-bottom: 1.5rem;
+}
 p {
   margin: 8px 0 0 0;
   color: var(--secondary);
@@ -406,7 +409,7 @@ section {
   border-radius: var(--border-radius-lg);
 }
 
-/*Accordion*/
+/* Accordion */
 .accordion-wrapper {
   display: grid;
   gap: 1rem;
@@ -432,7 +435,7 @@ section {
   align-items: center;
 }
 
-.accordion-text {
+.accordion-left {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -446,6 +449,7 @@ section {
   margin: 0;
   gap: 8px;
   font-weight: normal;
+  color: var(--primary);
 }
 
 .accordion-subtitle {
@@ -453,11 +457,44 @@ section {
   font-weight: normal;
   color: var(--secondary);
 }
+.accordion-right {
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 4px;
+}
 
 .accordion-date {
   font-size: var(--font-size-medium);
-  color: var(--secondary);
   font-weight: normal;
+  color: var(--secondary);
+  text-align: right;
+}
+.accordion-icon {
+  display: flex;
+min-height: 18px;
+flex-direction: column;
+justify-content: center;
+align-items: flex-end;
+gap: 10px;
+align-self: stretch;
+}
+/* SVG Styling */
+.caret {
+  transition: transform 0.2s ease;
+  stroke: currentColor;
+    stroke-width: 2.2;      /* Strichstärke */
+  color: var(--primary);
+  width: var(--font-size-medium);
+  height: var(--font-size-medium);     /* Farbe */
+}
+/* zugeklappt → ▼ */
+.accordion[aria-expanded="false"] .caret {
+  transform: rotate(0deg);
+}
+/* aufgeklappt → ▲ */
+.accordion[aria-expanded="true"] .caret {
+  transform: rotate(180deg);
 }
 
 .panel {
@@ -492,27 +529,24 @@ section {
   border-radius: var(--border-radius);
 }
 
-/* Plus/Minus Icon HTML: 
-<span class="accordion-icon" aria-hidden="true"></span> 
-*/
-.accordion-icon {
+.button-neumorph-1 {
+  margin: 2px;
   display: inline-flex;
-  align-items: center;
+  padding: 10px 30px;
   justify-content: center;
-  width: 1.25em;
-  height: 1.25em;
-  font-size: 1.2em;
-  line-height: 1;
-  transform: translateY(-0.02em);
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: #FFF;
+  box-shadow: 0 0 0 1px #DDD, 0 0 0 1px #DDD, 0 0 0 1px #DDD, 0 2px 6px -2px #D4D4D4, 0 -3px 0 0 #F6F6F6 inset;
+  text-decoration: none;
 }
+.button-neumorph-1:active {
+background: var(--button-fade, linear-gradient(180deg, #F4F4F4 0%, #FFF 100%));
+box-shadow: 0 0 0 1px #DDD, 0 2px 6px -2px #D4D4D4;}
 
-.accordion[aria-expanded="false"] .accordion-icon::before {
-  content: "+";
-}
 
-.accordion[aria-expanded="true"] .accordion-icon::before {
-  content: "−";
-}
+
 
 /*Projekte*/
 .projects-wrapper {
@@ -641,7 +675,7 @@ section {
 /* Skills */
  /* Kenntnisse */
 .skills-grid{
-  padding-top: 1rem;
+  margin-bottom: 1rem;
   display: grid;
   grid-template-columns: minmax(106px, 1fr) 2fr;
   gap: 1.25rem 1rem;             /* row gap / column gap */
