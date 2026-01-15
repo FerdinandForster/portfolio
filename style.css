@@ -427,6 +427,17 @@ section {
   transition: opacity 0.2s ease;
   padding-bottom: 1rem;
 }
+button.accordion{
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font: inherit;
+
+  color: var(--primary);
+  -webkit-text-fill-color: var(--primary); /* iOS Fix */
+}
 
 .accordion-content-wrapper {
   flex: 1;
@@ -449,7 +460,7 @@ section {
   margin: 0;
   gap: 8px;
   font-weight: normal;
-  color: var(--primary);
+  color: inherit;
 }
 
 .accordion-subtitle {
@@ -478,13 +489,14 @@ justify-content: center;
 align-items: flex-end;
 gap: 10px;
 align-self: stretch;
+color: var(--primary);
 }
 /* SVG Styling */
 .caret {
   transition: transform 0.2s ease;
   stroke: currentColor;
     stroke-width: 2.2;      /* Strichstärke */
-  color: var(--primary);
+  color: inherit;
   width: var(--font-size-medium);
   height: var(--font-size-medium);     /* Farbe */
 }
