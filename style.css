@@ -89,7 +89,7 @@ h2{
   letter-spacing: -0.36px;
 }
 .h3-about{
-  margin-bottom: 1.25rem;
+  margin-bottom: 2rem; /*1.25rem*/
 }
 p {
   margin: 0.5rem 0 0 0;
@@ -349,9 +349,6 @@ section {
   background-color: var(--element-secondary);
   text-decoration: none;
   border-radius: 12px;
-}
-.contact-item:hover {
-  background-color: var(--element-primary);
 }
 .contact-item h4, .contact-item p {
   margin: 0;
@@ -717,9 +714,11 @@ box-shadow: 0 0 0 1px #DDD, 0 2px 6px -2px #D4D4D4;}
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
 
-  padding: 16px 20px;
+  padding: 12px 20px;
   background-color: var(--color-bg-default);
   border-bottom: 1px solid var(--color-stroke-default);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+
 }
 
 .modal-title {
@@ -733,27 +732,12 @@ box-shadow: 0 0 0 1px #DDD, 0 2px 6px -2px #D4D4D4;}
   padding: 20px;
 }
 .close {
-  /*
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: var(--element-secondary);
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 0; */
-
   grid-column: 3;
   justify-self: end;
 
-  background-color: var(--element-secondary);
+  background-color: transparent;
   border: none;
-  border-radius: 50%;
+  border-radius: var(--border-radius-lg);
   width: 40px;
   height: 40px;
 
@@ -762,6 +746,9 @@ box-shadow: 0 0 0 1px #DDD, 0 2px 6px -2px #D4D4D4;}
   justify-content: center;
   cursor: pointer;
   padding: 0;
+}
+.close:hover {
+  background-color: var(--element-secondary);
 }
 
 .close svg {
@@ -772,7 +759,7 @@ box-shadow: 0 0 0 1px #DDD, 0 2px 6px -2px #D4D4D4;}
 .close svg path {
   fill: none;
   stroke: var(--secondary);
-  stroke-width: 2.5;
+  stroke-width: 2;
   stroke-linecap: round;
 }
 
