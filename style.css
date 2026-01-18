@@ -96,7 +96,7 @@ h4 {
   color: var(--primary);
   font-size: var(--font-size-medium);
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: normal;
   letter-spacing: -0.36px;
 }
@@ -777,20 +777,57 @@ box-shadow: 0 0 0 1px #DDD, 0 2px 6px -2px #D4D4D4;}
   border-radius: var(--border-radius-lg);
 }
 
+.modal-section {
+  margin: 2rem 0;
+}
+.modal-section-title {
+  margin: 0 0 1rem 0;
+  padding-bottom: .5rem;
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  color: var(--primary);
+  border-bottom: 1px solid var(--color-stroke-default);
+}
 
-.modal-body-section {
+.modal-split-section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  margin: 2rem 0;
+  align-items: center;
 }
 .modal-body-section-image {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  background-color: var(--element-secondary);
 }
 .modal-body-section-text {
 
+}
+ /* Details */
+.details-item{
+  display: grid;
+  grid-template-columns: minmax(106px, 1fr) 2fr;
+  gap: 1.25rem 1rem;             /* row gap / column gap */
+}
+
+.details-title{
+  margin: 0;
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  color: var(--primary);
+  hyphens: auto;
+}
+
+.details-list{
+  margin: 0;
+  padding: 0;
+  color: var(--secondary);
+}
+.modal-details-section{
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
 }
 
 /* Skills */
@@ -1019,15 +1056,29 @@ footer .theme-control .theme-btn[aria-pressed="true"]{
   cursor: pointer;
 }
 
-.modal-body-section {
+.modal-section {
+  margin: 2rem 0;
+}
+.modal-section-title {
+  margin: 0 0 1rem 0;
+  padding-bottom: .5rem;
+  font-size: var(--font-size-medium);
+  font-weight: 500;
+  color: var(--primary);
+  border-bottom: 1px solid var(--color-stroke-default);
+}
+
+.modal-split-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  align-items: center;
 }
 .modal-body-section-image {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  background-color: var(--element-secondary);
 }
 .modal-body-section-text {
 
