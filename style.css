@@ -459,7 +459,7 @@ section {
   margin: 0;
   gap: 8px;
   font-weight: normal;
-  color: inherit;
+  color: var(--primary);
 }
 .pulsing-dot {
   display: inline-block;
