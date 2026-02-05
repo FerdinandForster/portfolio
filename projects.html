@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ferdinand Forster | UX-Design Portfolio</title>
-  <link rel="icon" type="image/x-icon" href="/assets/favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/projects.css"/>
 </head>
 <body>
 <header>
-<div class="header-container">
+<div class="navbar-container">
   <a class="profile" href="index.html">
     <img class="profile-picture" src="assets/profilbild.jpg" alt="Porträt eines jungen Mannes mit kurzem braunem Haar und grauem Oberteil.">
     <div class="profile-info">
@@ -37,7 +38,7 @@
   <p>In meinem Studium habe ich eine Reihe an unterschiedlichen Projekten gearbeitet</p>
 </div>
   <div class="filter-buttons">
-    <button class="filter-btn active" data-filter="all">Alle</button>
+    <button class="filter-btn active" data-filter="all">Alle (10)</button>
     <button class="filter-btn" data-filter="UI/UX Design">UI/UX Design</button>
     <button class="filter-btn" data-filter="Produktdesign">Produktdesign</button>
     <button class="filter-btn" data-filter="Visual Identity">Visual Identity</button>
@@ -45,23 +46,18 @@
     <button class="filter-btn" data-filter="Fotografie">Fotografie</button>
   </div>
 
-
-
-
-  
-
       <!-- Projekte -->
 <div class="projects-wrapper">
 
-<button class="project-card" id="QuartierBtn" data-category="Visual Identity">
+<button class="project-card" id="TravisBtn" data-category="Produktdesign">
   <div class="project-text">
-    <h3 class="project-title">Quartier G – Alte Gießerei</h3>
+    <h3 class="project-title">Travis</h3>
     <p class="project-subtitle">
-    Auf dem ehemalige Gießereigelände in Ingolstadt entseht ein
-    Campus. Nun erhält er eine einheitliche Gestaltung.
+    Ein intelligenter Reisebegleiter, der Interaktiver, sprach- und kamerabasierter Pointer
+     </p>
     </p>
   </div>
-  <img class="project-image" src="assets/quartier_cover.png" alt="QuartierG">
+  <img class="project-image" src="assets/projects/travis/travis_cover.png" alt="Travis">
 </button>
 
 <button class="project-card" id="PsyBtn" data-category="Studie">
@@ -71,7 +67,7 @@
       Cross-Media-Vergleich von Nachrichten-Posts der Tagesschau 
     </p>
   </div>
-  <img class="project-image" src="assets/medienpsychologie_cover.jpg" alt="Medienpsychologie">
+  <img class="project-image" src="assets/projects/medienpsychologie/medienpsychologie_cover.png" alt="Medienpsychologie">
 </button>
 
 <button class="project-card" id="ProjectBtn" data-category="Produktdesign">
@@ -81,7 +77,7 @@
       Motorisierte Fader machen ökologische Zusammenhänge für Kinder sichtbar und fühlbar.
     </p>
   </div>
-  <img class="project-image" src="assets/plantpower_cover.jpg" alt="Projektfoto">
+  <img class="project-image" src="assets/projects/plantpower/plantpower_cover.png" alt="Projektfoto">
 </button>
 
 <button class="project-card" id="DigitalfotografieBtn" data-category="Fotografie">
@@ -91,7 +87,7 @@
       Aufnahmen aus unterschiedlichen Bereichen wie Sport, Portrait, Street und Langzeitbelichtung.
     </p>
   </div>
-  <img class="project-image" src="assets/photography_cover.jpg" alt="Digitalfotografie">
+  <img class="project-image" src="assets/projects/fotografie/photography_cover.jpg" alt="Digitalfotografie">
 </button>
 
 <button class="project-card" id="CaseStudyBtn" data-category="Studie">
@@ -101,7 +97,7 @@
       Wie sollten autonome Fahrzeuge auf ausbeuterisches oder aggressives Verhalten menschlicher Fahrer reagieren und welche Rolle spielt dabei die Perspektive und der Fahrstil?
     </p>
   </div>
-  <img class="project-image" src="assets/sdut_cover.jpg" alt="STUD">
+  <img class="project-image" src="assets/projects/sdut/sdut_cover.png" alt="STUD">
 </button>
 
 <button class="project-card" id="BlockBtn" data-category="Produktdesign">
@@ -111,7 +107,7 @@
       Eine minimalistische Fernbedienung, die sich den Bedürfnissen ihres Nutzers anpasst.
     </p>
   </div>
-  <img class="project-image" src="assets/product_cover.jpeg" alt="Block">
+  <img class="project-image" src="assets/projects/block/block_cover.png" alt="Block">
 </button>
 
 <button class="project-card" id="LuftsportBtn" data-category="UI/UX Design">
@@ -122,7 +118,7 @@
       Webseite mit WordPress erstellt habe.
     </p>
   </div>
-  <img class="project-image" src="assets/lsc_cover.jpeg" alt="LSC">
+  <img class="project-image" src="assets/projects/lsc/lsc_cover.png" alt="LSC">
 </button>
 
 <button class="project-card" id="InjurEaseBtn" data-category="UI/UX Design">
@@ -132,10 +128,21 @@
       Eine Fernrehabilitationslösung für verletzte Sportler die von einer Therapeuten-Plattform begleitet wird
     </p>
   </div>
-  <img class="project-image" src="assets/injur_cover3.png" alt="InjurEase">
+  <img class="project-image" src="assets/projects/injurease/injurease_cover.png" alt="InjurEase">
 </button>
 
-<button class="project-card" id="TypoBtn" data-category="User Experience Design">
+<button class="project-card" id="QuartierBtn" data-category="Visual Identity">
+  <div class="project-text">
+    <h3 class="project-title">Quartier G – Alte Gießerei</h3>
+    <p class="project-subtitle">
+    Auf dem ehemalige Gießereigelände in Ingolstadt entseht ein
+    Campus. Nun erhält er eine einheitliche Gestaltung.
+    </p>
+  </div>
+  <img class="project-image" src="assets/projects/quartierg/quartierg_cover.png" alt="QuartierG">
+</button>
+
+<button class="project-card" id="TypoBtn" data-category="UI/UX Design">
   <div class="project-text">
     <h3 class="project-title">Typografie</h3>
     <p class="project-subtitle">
@@ -143,15 +150,74 @@
       drei Ebenen besteht
     </p>
   </div>
-  <img class="project-image" src="assets/typo_cover2.jpg" alt="Typografie">
+  <img class="project-image" src="assets/projects/typografie/typo_cover.jpg" alt="Typografie">
 </button>
-
 
 </div>  
 
 <!-- Modale -->
 <div>
-    
+
+  <!-- Travis Modal -->
+  <div id="TravisModal" class="modal">
+  <div class="modal-content">
+        <div class="modal-header">
+      <h3 class="modal-title">Travis</h3>
+  <button class="close" aria-label="Close">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <path d="M 18 6 L 6 18 M 6 6 L 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  </button>
+        </div>
+  <div class="modal-body">
+  <p>In einer Zeit, in der Reisen immer individueller und spontaner wird, stehen Reisende häufig vor der Herausforderung, relevante Informationen schnell und intuitiv direkt vor Ort abzurufen. Klassische Reiseführer, persönliche Guides oder Smartphone-Anwendungen unterbrechen oft das Reiseerlebnis und erfordern Zeit und Aufmerksamkeit.
+
+Unser Projekt TRAVIS setzt genau hier an und bietet einen neuen Ansatz für die Reiseführung. Ziel unseres Projekts ist es, das Entdecken von Städten und Sehenswürdigkeiten einfacher, spontaner und unabhängiger zu gestalten.
+
+TRAVIS ist ein interaktiver, sprach- und kamerabasierter Pointer, der Informationen direkt am Point of Interest durch einfaches Zeigen oder Sprechen zugänglich macht. Reisende können Sehenswürdigkeiten erkunden, lokale Tipps erhalten oder gezielt Fragen stellen, ohne ständig auf ihr Smartphone blicken zu müssen. Besonders für Reisende, die Wert auf Spontanität, Unabhängigkeit und ein immersives Erlebnis legen, bietet TRAVIS einen echten Mehrwert. Die intuitive Bedienung über kurze Tastendrücke sorgt dafür, dass Informationen genau dann verfügbar sind, wenn sie gebraucht werden. Zusätzlich kann der Pointer als Wearable am Körper getragen werden und ist so immer schnell verfügbar.
+Ein zentrales Element von TRAVIS ist die sprachbasierte Interaktion: Nutzer können Fragen stellen, Empfehlungen erhalten oder Hintergrundinformationen abrufen, als würden sie mit einem persönlichen Reiseführer sprechen. Die Verbindung mit dem Smartphone erfolgt über Bluetooth, sodass TRAVIS als eigenständiges Interface agiert und das Reiseerlebnis nicht durch Displays dominiert wird. 
+Unser Projekt zeigt, wie moderne Technologie eingesetzt werden kann, um Reisen natürlicher und erlebnisorientierter zu gestalten. Mit TRAVIS schaffen wir eine einfache, aber intelligente Lösung, die Reiseführung modernisiert und den Fokus zurück auf das eigentliche Erlebnis legt: das Entdecken der Welt.</p>
+  </div>
+  </div>
+  </div>
+
+  <!-- Case Study Modal -->
+  <div id="CaseStudyModal" class="modal">
+  <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">
+  Evaluating Autonomous Vehicle Reaction to Bullying: The Role of
+  Perspective and Driving Style
+  </h3>
+  <button class="close" aria-label="Close">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+      <path d="M 18 6 L 6 18 M 6 6 L 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+  </div>
+  <div class="modal-body">
+  <p>
+  Da autonome Fahrzeuge (AVs) zunehmend in den öffentlichen Verkehr integriert werden,
+  stellt sich die Frage, wie sie auf ausbeuterisches oder aggressives Verhalten menschlicher Fahrer reagieren sollten.
+  Diese Studie untersucht, wie AVs auf solches „Mobbing“ reagieren und wie die Perspektive des Beobachters (AV-Passagier vs. Zuschauer) und der Fahrstil des AV (passiv vs. aggressiv) die Bewertung dieser Reaktionen beeinflussen.
+  Mithilfe von Videosimulationen, die mit dem CARLA-Simulator erstellt wurden, sahen sich 24 Teilnehmer zwei Szenarien an, in denen ein AV entweder passiv oder aggressiv reagierte, wenn es von einem von Menschen gesteuerten Fahrzeug geschnitten wurde.
+  Die Teilnehmer wurden in zwei Gruppen eingeteilt: diejenigen, die sich in einem AV befanden, und diejenigen, die sich außerhalb des AV befanden.
+  Die Teilnehmer wurden gebeten, die Reaktionen des AV zu bewerten und anzugeben, wie sie sich selbst in einer solchen Situation verhalten würden.
+  Die Ergebnisse zeigten, dass die Teilnehmer die Reaktionen des AV in beiden Szenarien als angemessen empfanden, unabhängig davon, ob sie sich in einem AV befanden oder nicht. Anhand von Videosimulationen, die mit dem CARLA-Simulator erstellt wurden,
+  sahen sich 24 Teilnehmer zwei Szenarien an, in denen ein AV entweder
+  passiv oder aggressiv reagierte, wenn es von einem von einem Menschen gesteuerten
+  Fahrzeug geschnitten wurde. Die Ergebnisse zeigen, dass passives Verhalten des autonomen Fahrzeugs durchweg
+  als akzeptabler, sicherer und moralischer bewertet wurde. Entgegen den Erwartungen
+  bewerteten Außenstehende die Reaktionen des autonomen Fahrzeugs positiver als
+  die Insassen, was darauf hindeutet, dass die psychologische Distanz und die wahrgenommene
+  Kontrolle die Beurteilung beeinflussen. Die Ergebnisse unterstreichen die Notwendigkeit für autonome Fahrzeuge,
+  in schwierigen Verkehrssituationen ein Gleichgewicht zwischen Durchsetzungsfähigkeit und Nicht-Eskalation zu finden,
+  um das Vertrauen und die Akzeptanz der Öffentlichkeit zu fördern.
+  </p>
+  </div>
+  </div>
+  </div>
+
   <!-- Quartier G – Alte Gießerei Modal -->
   <div id="QuartierModal" class="modal">
   <div class="modal-content">
@@ -258,7 +324,7 @@
 </div>
     <div class="modal-section">
     <div class="modal-split-section">
-    <img class="modal-body-section-image" src="assets/qg_logo.jpg"></img>
+    <img class="modal-body-section-image" src="assets/projects/injurease/injurease_illustrations.png"></img>
     <div class="modal-body-section-text">
     <h4>Research & Erkenntnisse</h4>
     <p>Durch Desk Research zu Sportverletzungen, eine Marktanalyse bestehender Reha-Apps und ein Experteninterview mit einem Facharzt für Orthopädie und Unfallchirurgie identifizierten wir den Kreuzbandriss als geeigneten Fokus. Zentrale Erkenntnisse waren, dass Patienten eine klare Visualisierung ihres Fortschritts benötigen, während Therapeuten kompakte Statusübersichten bevorzugen. Eine klare Trennung der Nutzungskontexte erwies sich als entscheidend für die Usability.</p>
@@ -268,7 +334,7 @@
 
     <div class="modal-section">
     <div class="modal-split-section">
-    <img class="modal-body-section-image" src="assets/qg_logo.jpg"></img>
+    <img class="modal-body-section-image" src="assets/projects/injurease/injurease_mobile.jpg"></img>
     <div class="modal-body-section-text">
     <h4>Konzept & Design-Entscheidungen</h4>
     <p>Auf Basis der Erkenntnisse entwickelten wir zwei klar getrennte Systeme: eine mobile App für Patienten und eine Desktop-Plattform für Therapeuten. Die App strukturiert den Rehabilitationsalltag in Training, Aufgaben und Fortschritt, während die Therapeutenplattform eine schnelle Patientenübersicht und flexible Rehaplanung ermöglicht. Das visuelle Design wurde bewusst reduziert und professionell gestaltet, um Vertrauen im Gesundheitskontext zu schaffen, ergänzt durch animierte Illustrationen zur verständlichen Vermittlung komplexer Inhalte.</p>
@@ -278,7 +344,7 @@
 
     <div class="modal-section">
     <div class="modal-split-section">
-    <img class="modal-body-section-image" src="assets/InjureEase/desktop_mobile.png"></img>
+    <img class="modal-body-section-image" src="assets/projects/injurease/injurease_desktop.png"></img>
     <div class="modal-body-section-text">
     <h4>Umsetzung & Ergebnis</h4>
     <p>Die Lösung wurde in Wireframes und High-Fidelity-Screens in Figma umgesetzt und in einem interaktiven Prototyp erlebbar gemacht. Das Ergebnis ist ein konsistentes, rollenbasiertes System, das die Motivation der Patienten unterstützt und Therapeuten eine effizientere Betreuung mehrerer Sportler ermöglicht. Die klare Informationsarchitektur sorgt für eine hohe Gebrauchstauglichkeit auf mobilen und Desktop-Geräten.</p>
@@ -294,7 +360,7 @@
   </div>
   </div>
 
-  <!-- Produktdesign Modal -->
+  <!-- Block Modal -->
   <div id="BlockModal" class="modal">
   <div class="modal-content">
         <div class="modal-header">
@@ -365,43 +431,6 @@
   et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
   accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
   no sea takimata sanctus est Lorem ipsum dolor sit amet.
-  </p>
-  </div>
-  </div>
-  </div>
-
-  <!-- Case Study Modal -->
-  <div id="CaseStudyModal" class="modal">
-  <div class="modal-content">
-        <div class="modal-header">
-            <h3 class="modal-title">
-  Evaluating Autonomous Vehicle Reaction to Bullying: The Role of
-  Perspective and Driving Style
-  </h3>
-  <button class="close" aria-label="Close">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-      <path d="M 18 6 L 6 18 M 6 6 L 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-  </button>
-  </div>
-  <div class="modal-body">
-  <p>
-  Da autonome Fahrzeuge (AVs) zunehmend in den öffentlichen Verkehr integriert werden,
-  stellt sich die Frage, wie sie auf ausbeuterisches oder aggressives Verhalten menschlicher Fahrer reagieren sollten.
-  Diese Studie untersucht, wie AVs auf solches „Mobbing“ reagieren und wie die Perspektive des Beobachters (AV-Passagier vs. Zuschauer) und der Fahrstil des AV (passiv vs. aggressiv) die Bewertung dieser Reaktionen beeinflussen.
-  Mithilfe von Videosimulationen, die mit dem CARLA-Simulator erstellt wurden, sahen sich 24 Teilnehmer zwei Szenarien an, in denen ein AV entweder passiv oder aggressiv reagierte, wenn es von einem von Menschen gesteuerten Fahrzeug geschnitten wurde.
-  Die Teilnehmer wurden in zwei Gruppen eingeteilt: diejenigen, die sich in einem AV befanden, und diejenigen, die sich außerhalb des AV befanden.
-  Die Teilnehmer wurden gebeten, die Reaktionen des AV zu bewerten und anzugeben, wie sie sich selbst in einer solchen Situation verhalten würden.
-  Die Ergebnisse zeigten, dass die Teilnehmer die Reaktionen des AV in beiden Szenarien als angemessen empfanden, unabhängig davon, ob sie sich in einem AV befanden oder nicht. Anhand von Videosimulationen, die mit dem CARLA-Simulator erstellt wurden,
-  sahen sich 24 Teilnehmer zwei Szenarien an, in denen ein AV entweder
-  passiv oder aggressiv reagierte, wenn es von einem von einem Menschen gesteuerten
-  Fahrzeug geschnitten wurde. Die Ergebnisse zeigen, dass passives Verhalten des autonomen Fahrzeugs durchweg
-  als akzeptabler, sicherer und moralischer bewertet wurde. Entgegen den Erwartungen
-  bewerteten Außenstehende die Reaktionen des autonomen Fahrzeugs positiver als
-  die Insassen, was darauf hindeutet, dass die psychologische Distanz und die wahrgenommene
-  Kontrolle die Beurteilung beeinflussen. Die Ergebnisse unterstreichen die Notwendigkeit für autonome Fahrzeuge,
-  in schwierigen Verkehrssituationen ein Gleichgewicht zwischen Durchsetzungsfähigkeit und Nicht-Eskalation zu finden,
-  um das Vertrauen und die Akzeptanz der Öffentlichkeit zu fördern.
   </p>
   </div>
   </div>
@@ -594,13 +623,13 @@
 
 </main>
 <footer>
-  <div class="footer-center">
-    <div class="footer-center-left">
+  <div class="footer-top">
+    <div class="footer-top-left">
       <a href="index.html">Kontakt</a>
       <a href="projects.html">Projekte</a>
       <a href="about.html">Über</a>
     </div>
-    <div class="footer-center-right">
+    <div class="footer-top-right">
       <div class="theme-control" aria-label="Theme Einstellung">
       <button class="theme-btn" type="button" data-theme="light" aria-pressed="false">Hell</button>
       <button class="theme-btn" type="button" data-theme="dark" aria-pressed="false">Dunkel</button>

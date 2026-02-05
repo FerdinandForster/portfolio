@@ -1,0 +1,35 @@
+
+.cta-btns {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Kontakt Liste */
+.contact-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 1rem;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: var(--element-secondary);
+  text-decoration: none;
+  border-radius: 12px;
+}
+.contact-item h4, .contact-item p {
+  margin: 0;
+  font-weight: normal;
+  font-size: var(--font-size-medium);
+}
+.contact-item-icon {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+  color: var(--secondary);
+}
+.arrow-down {
+  transform: rotate(135deg);
+}
