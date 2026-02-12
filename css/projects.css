@@ -171,6 +171,9 @@
   stroke-width: 2;
   stroke-linecap: round;
 }
+.close:hover svg path {
+  stroke: var(--primary);
+}
 
 .banner-image {
   width: 100%;
@@ -200,11 +203,103 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
   background-color: var(--element-secondary);
-  border-radius: var(--border-radius-lg);
 }
 .modal-body-section-text {
 
 }
+
+.carousel {
+  position: relative;
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+.carousel__viewport {
+  overflow: hidden;
+  outline: none;
+}
+
+.carousel__track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -webkit-overflow-scrolling: touch;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.carousel__slide {
+  scroll-snap-align: start;
+  flex: 0 0 100%;
+  margin: 0;
+  overflow: hidden;
+  min-width: 100%;
+}
+
+.carousel__slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Navigation Buttons */
+.carousel__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--element-secondary);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--secondary);
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.carousel__button:hover {
+  background: var(--element-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: var(--primary);
+}
+
+.carousel__button:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel__button--prev {
+  left: 16px;
+}
+
+.carousel__button--next {
+  right: 16px;
+}
+
+.carousel__button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+
+
+
+
  /* Details */
 .details-item{
   display: grid;
@@ -340,7 +435,7 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  width: 80%;
+  width: 58em;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: var(--border-radius-lg);
 }

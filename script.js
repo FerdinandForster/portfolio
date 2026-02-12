@@ -71,6 +71,10 @@ window.addEventListener("click", (event) => {
 });
 
 
+
+
+
+
 // Filter Functionality
 const filterButtons = document.querySelectorAll(".filter-btn");
 const projectCards = document.querySelectorAll(".project-card");
@@ -115,6 +119,8 @@ function applyTheme(mode) {
   updateThemeButtons(mode);
 }
 
+
+//slideshow-carousel
 function getCurrentMode() {
   return localStorage.getItem("themeMode") || "auto";
 }
@@ -143,3 +149,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+const track = document.getElementById('carouselTrack');
+const prevButton = document.getElementById('prevButton');
+const nextButton = document.getElementById('nextButton');
+const slides = document.querySelectorAll('.carousel__slide');
+
+let currentIndex = 0;
+
+function updateButtons() {
+  prevButton.disabled = currentIndex === 0;
+  nextButton.disabled = currentIndex === slides.length - 1;
+}
+
+function scrollToSlide(index) {
+  const slideWidth = slides[0].offsetWidth;
+  const gap = 16;
+  track.scrollLeft = index * (slideWidth + gap);
+  currentIndex = index;
+  updateButtons();
+}
+
+prevButton.addEventListener('click', () => {
+  if (currentIndex > 0) {
+    scrollToSlide(currentIndex - 1);
+  }
+});
+
+nextButton.addEventListener('click', () => {
+  if (currentIndex < slides.length - 1) {
+    scrollToSlide(currentIndex + 1);
+  }
+});
+
+// Optional: Track scroll position to update button states
+track.addEventListener('scroll', () => {
+  const slideWidth = slides[0].offsetWidth;
+  const gap = 16;
+  currentIndex = Math.round(track.scrollLeft / (slideWidth + gap));
+  updateButtons();
+});
+
+// Initialize button states
+updateButtons();
