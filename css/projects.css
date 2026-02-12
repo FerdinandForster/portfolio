@@ -274,7 +274,7 @@
 }
 
 .carousel__button:hover {
-  background: var(--element-primary);
+  background: var(--element-secondary);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   color: var(--primary);
 }
