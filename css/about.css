@@ -165,7 +165,54 @@ color: var(--primary);
   background-color: #000;
   border-radius: var(--border-radius);
 }
-
+.button-skeu-wrapper {
+  display: flex;
+width: 113px;
+padding: 1px 1px 2px 1px;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+border-radius: 11px;
+background: #090E24;
+text-decoration: none;
+color: white;
+font-size: var(--font-size-medium);
+}
+.button-skeu {
+  display: flex;
+padding: 8px 16px;
+justify-content: center;
+align-items: center;
+gap: 6px;
+align-self: stretch;
+border-radius: 10px;
+border-top: 1px solid #646464;
+border-right: 1px solid #646464;
+border-left: 1px solid #646464;
+background: linear-gradient(180deg, #090E24 0%, #444 100%);
+}
+.button-skeu:hover {
+  border-radius: 10px;
+border-top: 1px solid #646464;
+border-right: 1px solid #646464;
+border-left: 1px solid #646464;
+background: linear-gradient(180deg, #090E24 0%, #292929 100%);
+}
+.button-skeu-wrapper:active {
+  display: flex;
+width: 113px;
+padding: 2px 1px 1px 1px;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px;
+}
+.button-skeu:active {
+  border-top: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+border-radius: 10px;
+background: linear-gradient(180deg, #090E24 0%, #292929 100%);
+}
 .button-neumorph-1 {
   margin: 2px;
   display: inline-flex;
