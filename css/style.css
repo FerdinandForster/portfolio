@@ -176,6 +176,17 @@ header {
   font-weight: normal;
   line-height: normal;
 }
+.links-wrapper{
+  display: flex;
+  align-items: center;
+}
+.vl {
+  border-radius: 100px;
+  margin-right: 8px;
+  padding-left: 8px;
+  border-left: 1.2px solid var(--secondary);
+  height: 20px;
+}
 /* Navigation Menu - innerhalb des Headers, über die ganze Breite */
 #myLinks {
   display: none;
