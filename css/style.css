@@ -180,12 +180,32 @@ header {
   display: flex;
   align-items: center;
 }
+.contact-btn {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  width: 40px;
+  height: 40px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+  border-radius: var(--border-radius-lg);
+  stroke: var(--secondary);
+  stroke-width: 1.5;
+}
+.contact-btn:hover {
+  background-color: var(--element-secondary);
+  stroke: var(--primary);
+}
 .vl {
-  border-radius: 100px;
-  margin-right: 8px;
-  padding-left: 8px;
-  border-left: 1.2px solid var(--secondary);
-  height: 20px;
+  display: flex;
+width: 16px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+align-self: stretch;
 }
 /* Navigation Menu - innerhalb des Headers, über die ganze Breite */
 #myLinks {
@@ -254,6 +274,7 @@ header {
 }
 .burger-menu-button:hover{
   background-color: var(--element-secondary);
+  color: var(--primary);
 }
 .close-menu-button{
   border: none;
@@ -271,7 +292,7 @@ header {
   height:24px;
   display:block;
   fill:none;
-  stroke:currentColor;
+  stroke:var(--primary);
   stroke-width:2;
   stroke-linecap:round;
   stroke-linejoin:round;
