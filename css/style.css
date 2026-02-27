@@ -192,12 +192,13 @@ header {
   gap: 4px;
   align-self: stretch;
   border-radius: var(--border-radius-lg);
-  stroke: var(--secondary);
+  stroke: var(--primary);
   stroke-width: 1.5;
+  transition: background-color 0.2s ease;
+
 }
 .contact-btn:hover {
   background-color: var(--element-secondary);
-  stroke: var(--primary);
 }
 .vl {
   display: flex;
@@ -206,6 +207,8 @@ justify-content: center;
 align-items: center;
 gap: 10px;
 align-self: stretch;
+color: var(--secondary);
+opacity: 0.5;
 }
 /* Navigation Menu - innerhalb des Headers, über die ganze Breite */
 #myLinks {
@@ -236,7 +239,7 @@ align-self: stretch;
   font-size: 0.875rem;
   font-weight: 500;
   transition: background-color 0.2s ease;
-  border-radius: 100px;
+  border-radius: var(--border-radius-lg);
 }
 #myLinks.is-open .link-btn {
   animation: .3s stack-to-left var(--snappy-animation);
@@ -265,7 +268,7 @@ align-self: stretch;
   gap: 4px;
   align-self: stretch;
   border-radius: var(--border-radius-lg);
-  color: var(--secondary);
+  color: var(--primary);
 }
 .burger-menu-button svg{
   width: 17px;
@@ -274,7 +277,6 @@ align-self: stretch;
 }
 .burger-menu-button:hover{
   background-color: var(--element-secondary);
-  color: var(--primary);
 }
 .close-menu-button{
   border: none;
@@ -467,6 +469,10 @@ footer .theme-control .theme-btn[aria-pressed="true"]{
 .link-btn.active,
 .link-btn:hover {
   background-color: var(--element-secondary);
+}
+.links-wrapper {
+flex-direction: row-reverse;
+
 }
 .menu-open .profile-info {
   visibility: visible;
