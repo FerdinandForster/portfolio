@@ -111,7 +111,6 @@
   background-color: var(--color-bg-default);
   margin: auto;
   align-content: end;
-  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 }
 
 .modal-header {
@@ -125,8 +124,6 @@
   padding: 5px 5px;
   background-color: var(--color-bg-default);
   border-bottom: 1px solid var(--color-stroke-default);
-  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
-
 }
 
 .modal-title {
@@ -293,8 +290,7 @@
 }
 
 .carousel__button:disabled {
-  opacity: 0.4;
-  cursor: default;
+  display: none;
 }
 
 
@@ -339,7 +335,6 @@
   border-radius: var(--border-radius);
 }
 
-
  .modal {
   display: none;
   position: fixed;
@@ -365,6 +360,9 @@
   width: 80%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: var(--border-radius-lg);
+}
+.modal-header {
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
 }
 .modal-body {
   overflow-y: auto;
@@ -404,9 +402,6 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
   background-color: var(--element-secondary);
-}
-.modal-body-section-text {
-
 }
 
 }
