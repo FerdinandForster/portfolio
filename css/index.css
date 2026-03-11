@@ -1,3 +1,33 @@
+/* Hero H2 – Ferdi → Ferdinand reveal */
+.hero-wrapper h2 {
+  display: inline-flex;
+  align-items: baseline;
+  overflow: hidden;
+}
+
+.hero-wrapper h2 .name-ferdi {
+  display: inline-block;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.hero-wrapper h2 .name-nand {
+  display: inline-block;
+  max-width: 0;
+  opacity: 0;
+  transform: translateX(-6px);
+  overflow: hidden;
+  white-space: nowrap;
+  transition:
+    max-width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.35s ease 0.05s,
+    transform 0.35s ease 0.05s;
+}
+
+.hero-wrapper h2:hover .name-nand {
+  max-width: 200px;        /* großzügig – muss nur größer als der Text sein */
+  opacity: 1;
+  transform: translateX(0);
+}
 
 .cta-btns {
   display: flex;

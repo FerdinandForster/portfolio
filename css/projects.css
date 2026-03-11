@@ -30,59 +30,67 @@
   background-color: var(--element-primary);
   color: white;
 }
-/*Projekte*/
+/* Projekte – 3-Spalten Card Grid */
 .projects-wrapper {
   display: grid;
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
+  padding: 1rem 0 2rem;
 }
 
 .project-card {
   border: none;
-  margin: 1rem 0;
-  background-color: transparent;
+  background-color: var(--element-secondary);
   cursor: pointer;
   width: 100%;
   text-align: left;
   padding: 0;
   display: flex;
-  align-items: center;
-  transition: opacity 0.2s ease;
-  flex: 1;
-  justify-content: space-between;
-  gap: 6px;
-  border-bottom: 5px var(--color-stroke-default);
+  flex-direction: column;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
 .project-card.hidden {
   display: none;
 }
 
+.project-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 0;
+  background-color: var(--element-secondary);
+  display: block;
+}
 
 .project-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  letter-spacing: -2%;
+  gap: 6px;
+  padding: 14px 16px 18px;
 }
 
 .project-title {
   font-size: var(--font-size-medium);
-  display: flex;
-  align-items: center;
+  font-weight: 600;
   margin: 0;
+  color: var(--primary);
 }
 
 .project-subtitle {
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-small);
   color: var(--secondary);
-}
-
-.project-image {
-  width: 100px;
-  height: 100px;
-  flex-shrink: 0;
-  border-radius: var(--border-radius);
-  object-fit: cover;
-  background-color: var(--element-secondary);
+  line-height: 1.5;
+  margin: 0;
 }
 
 /*Modal*/
@@ -326,14 +334,9 @@
 /* Responsive Design */
 /* Tablet */
 @media (min-width: 501px) {
- .project-image {
-  width: 40%;
-  height: auto;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  flex-shrink: 0;
-  border-radius: var(--border-radius);
-}
+    .projects-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
  .modal {
   display: none;
@@ -409,6 +412,10 @@
 /* Laptop und Desktop */
 @media (min-width: 939px) {
     
+      .projects-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .modal {
   display: none;
   position: fixed;
