@@ -133,6 +133,40 @@ header {
   position: fixed;
   background-color: var(--color-bg-default);
 }
+
+/* Header mit Blur-Effekt
+header {
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 80%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    black 80%,
+    transparent 100%
+  );
+} */
+
 .navbar-container {
   position: relative;
   max-width: var(--max-width);
