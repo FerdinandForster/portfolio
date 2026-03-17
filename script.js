@@ -24,7 +24,7 @@ function toggleMenu() {
   profile.classList.toggle("hidden");
 }
 
-// Accordion Functionality (inkl. aria-expanded + aria-hidden)
+// Accordion Functionality
 document.querySelectorAll('.accordion').forEach((accordion) => {
   accordion.addEventListener('click', function () {
     const panel = this.nextElementSibling;
@@ -54,8 +54,6 @@ function closeModal() {
   modal.style.display = "none";
   modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "auto";
-
-  // stoppt Medien/entlastet DOM
   modalTitle.textContent = "";
   modalBody.innerHTML = "";
 }
@@ -69,34 +67,27 @@ async function loadModalContent(src) {
       modalBody.innerHTML = "<p>Fehler beim Laden.</p>";
       return;
     }
-
     modalBody.innerHTML = await res.text();
-
-    // Nach dem Einfügen: Carousel im Modal initialisieren (falls vorhanden)
     initCarouselInside(modalBody);
   } catch (e) {
     modalBody.innerHTML = "<p>Fehler beim Laden.</p>";
   }
 }
 
-// Cards -> Modal öffnen + Inhalt nachladen
 document.querySelectorAll(".project-card[data-modal-src]").forEach((card) => {
   card.addEventListener("click", () => {
-    openModal(); // sofort Popup öffnen
+    openModal();
     modalTitle.textContent = card.dataset.modalTitle || "";
-    loadModalContent(card.dataset.modalSrc); // Inhalt asynchron nachladen
+    loadModalContent(card.dataset.modalSrc);
   });
 });
 
-// Close Button im Modal
 modal.querySelector(".close").addEventListener("click", closeModal);
 
-// Klick außerhalb schließt
 window.addEventListener("click", (event) => {
   if (event.target === modal) closeModal();
 });
 
-// ESC schließt
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && modal.style.display === "block") closeModal();
 });
@@ -127,12 +118,21 @@ filterButtons.forEach((button) => {
         }
       }
     });
+
+    // Nach Filter: Carousel zurück zum Anfang
+    setTimeout(() => {
+      const track = document.getElementById("projectsTrack");
+      if (track) {
+        track.scrollLeft = 0;
+        updateProjectsCarouselBtns();
+      }
+    }, 50);
   });
 });
 
 
 // =======================
-// Theme: Auto (System) default + manual override
+// Theme
 // =======================
 function applyTheme(mode) {
   const root = document.documentElement;
@@ -176,7 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // =======================
-// Carousel init (nur im geladenen Modal-Inhalt)
+// Image-Carousel im Modal (carousel__button)
 // =======================
 function initCarouselInside(scope) {
   const track = scope.querySelector('#carouselTrack');
@@ -218,3 +218,48 @@ function initCarouselInside(scope) {
 
   updateButtons();
 }
+
+
+// =======================
+// Projects Carousel
+// =======================
+(function () {
+  const track = document.getElementById("projectsTrack");
+  const prevBtn = document.getElementById("projectsPrev");
+  const nextBtn = document.getElementById("projectsNext");
+
+  if (!track || !prevBtn || !nextBtn) return;
+
+  function getVisibleCount() {
+    if (window.innerWidth >= 939) return 3;
+    if (window.innerWidth >= 501) return 2;
+    return 1;
+  }
+
+  function visibleCards() {
+    return [...track.querySelectorAll(".project-card:not(.hidden)")];
+  }
+
+  function cardWidth() {
+    const card = visibleCards()[0];
+    if (!card) return 0;
+    return card.offsetWidth + 16;
+  }
+
+  window.updateProjectsCarouselBtns = function () {
+    prevBtn.disabled = track.scrollLeft <= 4;
+    nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.offsetWidth - 4;
+  };
+
+  prevBtn.addEventListener("click", () => {
+    track.scrollLeft -= cardWidth() * getVisibleCount();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    track.scrollLeft += cardWidth() * getVisibleCount();
+  });
+
+  track.addEventListener("scroll", updateProjectsCarouselBtns);
+  window.addEventListener("resize", updateProjectsCarouselBtns);
+  updateProjectsCarouselBtns();
+})();
