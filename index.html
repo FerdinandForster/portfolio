@@ -8,6 +8,8 @@
   <link rel="icon" type="image/png" href="assets/favicon.png"/>
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/index.css"/>
+  <link rel="stylesheet" href="css/projects.css"/>
+  <link rel="stylesheet" href="css/about.css"/>
 </head>
 
 <body>
@@ -36,9 +38,9 @@
       </div>
 
       <div id="myLinks">
-        <a class="link-btn" href="index.html">Kontakt</a>
-        <a class="link-btn" href="projects.html">Projekte</a>
-        <a class="link-btn" href="about.html">Über</a>
+        <a class="link-btn" href="#projects">Projekte</a>
+        <a class="link-btn" href="#erfahrung">Erfahrung</a>
+        <a class="link-btn" href="#kenntnisse">Kenntnisse</a>
       </div>
 
       <button class="burger-menu-button" onclick="toggleMenu()" aria-label="Menü öffnen">
@@ -60,11 +62,351 @@
 <main>
   <div class="hero-wrapper">
     <h2>Hi, ich bin&nbsp;<span class="name-ferdi"> Ferdi</span><span class="name-nand">nand</span></h2>
-    <p>User Experience Design Student an der Technischen Hochschule in Ingolstadt.</p>
+    <p>Derzeit studiere ich User Experience Design (B.Sc.) an der Technischen Hochschule in Ingolstadt im siebten Semester.<span class="pulsing-dot"></span></p>
     <p>Mein Hintergrund reicht vom Freiwilligen Sozialen Jahr im Rettungsdienst mit Abschluss als Rettungssanitäter bis zum Praxissemester in der Konzeptentwicklung bei Audi.</p>
     <p>Abseits davon finde ich Ausgleich beim Rennradfahren, Joggen, Bouldern und beim Sammeln und Organisieren alter iPods und Musikmediatheken.</p>
     <div class="cta-btns"></div>
   </div>
+
+<section id="projects">
+   <h2>Projekte</h2>
+<div class="projects-carousel-header">
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">Alle</button>
+    <button class="filter-btn" data-filter="Produktdesign">Produktdesign</button>
+    <button class="filter-btn" data-filter="UI/UX Design">UI/UX Design</button>
+    <button class="filter-btn" data-filter="Studie">Studie</button>
+    <button class="filter-btn" data-filter="Visual Identity">Visual Identity</button>
+  </div>
+  <div class="projects-carousel-nav">
+    <button class="projects-carousel-btn" id="projectsPrev" aria-label="Zurück">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="projects-carousel-btn" id="projectsNext" aria-label="Weiter">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 18L15 12L9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Projekte -->
+<div class="projects-carousel-viewport">
+  <div class="projects-wrapper" id="projectsTrack">
+
+    <button class="project-card"
+            data-category="Produktdesign"
+            data-modal-title="Travis"
+            data-modal-src="modals/travis.html">
+      <div class="project-text">
+        <h3 class="project-title">Travis</h3>
+        <p class="project-subtitle">
+          Ein intelligenter Reisebegleiter, der Interaktiver, sprach- und kamerabasierter Pointer
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/travis/travis_cover.png" alt="Travis" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="Studie"
+            data-modal-title="Nachrichten im digitalen Zeitalter – Gute User Experience?"
+            data-modal-src="modals/psy.html">
+      <div class="project-text">
+        <h3 class="project-title">Nachrichten im digitalen Zeitalter</h3>
+        <p class="project-subtitle">
+          Cross-Media-Vergleich von Nachrichten-Posts der Tagesschau
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/medienpsychologie/medienpsychologie_cover.png" alt="Medienpsychologie" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="Produktdesign"
+            data-modal-title="Plant Power"
+            data-modal-src="modals/plantpower.html">
+      <div class="project-text">
+        <h3 class="project-title">Plant Power</h3>
+        <p class="project-subtitle">
+          Motorisierte Fader machen ökologische Zusammenhänge für Kinder sichtbar und fühlbar.
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/plantpower/plantpower_cover.png" alt="Projektfoto" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="Studie"
+            data-modal-title="Evaluating Autonomous Vehicle Reaction to Bullying: The Role of Perspective and Driving Style"
+            data-modal-src="modals/casestudy.html">
+      <div class="project-text">
+        <h3 class="project-title">Reaktion autonomer Fahrzeuge auf Mobbing</h3>
+        <p class="project-subtitle">
+          Wie sollten autonome Fahrzeuge auf ausbeuterisches oder aggressives Verhalten menschlicher Fahrer reagieren?
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/sdut/sdut_cover.png" alt="STUD" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="Produktdesign"
+            data-modal-title="Block"
+            data-modal-src="modals/block.html">
+      <div class="project-text">
+        <h3 class="project-title">Block</h3>
+        <p class="project-subtitle">
+          Eine minimalistische Fernbedienung, die sich den Bedürfnissen ihres Nutzers anpasst.
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/block/block_cover.png" alt="Block" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="UI/UX Design"
+            data-modal-title="Luftsportclub Kitzingen"
+            data-modal-src="modals/luftsport.html">
+      <div class="project-text">
+        <h3 class="project-title">Luftsportclub Kitzingen</h3>
+        <p class="project-subtitle">
+          Ein freiwilliges Projekt, bei dem ich meinem Verein eine neue
+          Webseite mit WordPress erstellt habe.
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/lsc/lsc_cover.png" alt="LSC" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="UI/UX Design"
+            data-modal-title="InjurEase"
+            data-modal-src="modals/injurease.html">
+      <div class="project-text">
+        <h3 class="project-title">InjurEase</h3>
+        <p class="project-subtitle">
+          Eine Fernrehabilitationslösung für verletzte Sportler die von einer Therapeuten-Plattform begleitet wird
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/injurease/injurease_cover.png" alt="InjurEase" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="Visual Identity"
+            data-modal-title="Quartier G – Alte Gießerei"
+            data-modal-src="modals/quartier.html">
+      <div class="project-text">
+        <h3 class="project-title">Quartier G – Alte Gießerei</h3>
+        <p class="project-subtitle">
+          Auf dem ehemalige Gießereigelände in Ingolstadt entsteht ein
+          Campus. Nun erhält er eine einheitliche Gestaltung.
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/quartierg/quartierg_cover.png" alt="QuartierG" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="UI/UX Design"
+            data-modal-title="Typografisches Interface"
+            data-modal-src="modals/typo.html">
+      <div class="project-text">
+        <h3 class="project-title">Typografie</h3>
+        <p class="project-subtitle">
+          Ein rein typografisches Informationssystem zu Skigebieten, das aus
+          drei Ebenen besteht
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/typografie/typo_cover.jpg" alt="Typografie" loading="lazy" decoding="async">
+    </button>
+
+  </div>
+</div>
+
+  <!-- Generisches Modal -->
+  <div id="ProjectModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="ProjectModalTitle"></h3>
+        <button class="close" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M 18 6 L 6 18 M 6 6 L 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" id="ProjectModalBody"></div>
+    </div>
+  </div>
+</section>
+
+<section id="erfahrung">
+  <h2>Erfahrung</h2>
+  <div class="accordion-wrapper">
+    <div class="accordion-item">
+    <button class="accordion" tabindex="0" aria-expanded="false">
+    <div class="accordion-content-wrapper">
+    <div class="accordion-left">
+    <h4 class="accordion-title">Tech. Hochschule Ingolstadt</h4>
+    <div class="accordion-subtitle">B.Sc. User Experience Design</div>
+  </div>
+  <div class="accordion-right">
+    <div class="accordion-icon" aria-hidden="true">
+      <svg class="caret" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M6 10l6 6 6-6" /></svg>
+    </div>
+    <div class="accordion-date">Okt 22 - Mär 26</div>
+  </div>
+    
+    </div>
+    </button>
+    <div class="panel">
+    <p>
+    Der Studiengang User Experience Design kombiniert Design, Psychologie und Technologie. 
+    Studierende lernen, nutzerzentrierte digitale Produkte und Services zu gestalten.
+    </p>
+    <a class="button-skeu-wrapper" href="assets/notenblatt_thi.pdf" download>
+      <div class="button-skeu">Notenblatt</div>
+    </a>
+    
+    </div>
+    </div>
+
+    <div class="accordion-item">
+    <button class="accordion" tabindex="0" aria-expanded="false">
+    <div class="accordion-content-wrapper">
+    <div class="accordion-left">
+    <h4 class="accordion-title">Audi AG</h4>
+    <div class="accordion-subtitle">Praktikant</div>
+    </div>
+    <div class="accordion-right">
+    <div class="accordion-icon" aria-hidden="true">
+      <svg class="caret" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M6 10l6 6 6-6" /></svg>
+    </div>
+    <div class="accordion-date">Sep 24 - Mär 25
+    </div>
+    </div>
+    </div>
+    </button>
+    <div class="panel">
+    <p>
+    In der Abteilung „Steuerung Entwicklung User Interface“ war ich an der
+    Entwicklung einer gesamtheitlichen 3D-HMI für ein innovatives
+    Interieurkonzept der PPE-Plattform beteiligt. Mit Blender habe ich
+    3D-Assets und Animationen erstellt und im UI/UX-Design unterstützt.
+    </p>
+    <a class="button" href="assets/praktikumszeugnis_audi.pdf" download>Praktikumszeugnis
+
+    </a>
+    </a>
+    </div>
+    </div>
+
+    <div class="accordion-item">
+    <button class="accordion" tabindex="0" aria-expanded="false">
+    <div class="accordion-content-wrapper">
+    <div class="accordion-left">
+    <h4 class="accordion-title">Bayerisches Rotes Kreuz</h4>
+    <div class="accordion-subtitle">Rettungssanitäter</div>
+    </div>
+    <div class="accordion-right">
+      <div class="accordion-icon" aria-hidden="true">
+      <svg class="caret" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M6 10l6 6 6-6" /></svg>
+    </div>
+    <div class="accordion-date">Sep 21 - Sep 22</div>
+    </div>
+    </div>
+    </button>
+    <div class="panel">
+    <p>
+    Im Rahmen meines Freiwilligen Sozialen Jahres konnte ich viele
+    Erfahrungen im Umgang mit Menschen und in der Arbeitswelt sammeln. Das
+    FSJ habe ich mit der Qualifikation als Rettungssanitäter
+    abgeschlossen.
+    </p>
+    <a class="button" href="assets/bescheinigung_FSJ.pdf" download>Bescheinigung</a>
+    <a class="button" href="assets/urkunde_rs.pdf" download>Urkunde</a>
+    </div>
+    </div>
+
+    <div class="accordion-item">
+    <button class="accordion" tabindex="0" aria-expanded="false">
+    <div class="accordion-content-wrapper">
+    <div class="accordion-left">
+    <h4 class="accordion-title">Armin-Knab-Gymnasium</h4>
+    <div class="accordion-subtitle">Abitur</div>
+    </div>
+    <div class="accordion-right">
+      <div class="accordion-icon" aria-hidden="true">
+      <svg class="caret" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <path d="M6 10l6 6 6-6" /></svg>
+    </div>
+    <div class="accordion-date">Sep 13 - Jul 21
+    </div>
+    </div>
+    </button>
+    <div class="panel">
+    <p>
+    Mitglied im Schulgarten, Wahlfächer Film AG
+    </p>
+    <a class="button" href="assets/zeugnis_allgemeine-hochschulreife.pdf" download>Zeugnis</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="kenntnisse">
+<h2>Kenntnisse</h2>
+<div class="skills-grid">
+  <h4 class="skills-title">UX & Research</h4>
+  <ul class="skills-list">
+    <li>Methoden: Moderation, Testskripte, Auswertung, Insights & Empfehlungen</li>
+    <li>Deliverables: Flows, IA, Lo/Hi-Fi Prototypen</li>
+  </ul>
+</div>
+<div class="skills-grid">
+<h4 class="skills-title">Design</h4>
+  <ul class="skills-list">
+    <li>Figma</li>
+    <li>Adobe Creative Suite</li>
+    <li>Blender, Unity</li>
+    <li>Webflow, WordPress</li>
+    <li>Lightroom Classic, Affinity Photo</li>
+    <li>Final Cut Pro, iMovie</li>
+  </ul>
+</div>
+<div class="skills-grid">
+<h4 class="skills-title">Programmieren</h4>
+  <ul class="skills-list">
+    <li>Softwareentwicklung (Java)</li>
+    <li>Datenbanken (SQL)</li>
+    <li>Software Engineering</li>
+    <li>Webtechnologien (HTML, CSS, JS)</li>
+  </ul>
+</div>
+<div class="skills-grid">
+<h4 class="skills-title">Office</h4>
+  <ul class="skills-list">
+    <li>Microsoft Office</li>
+    <li>Open Office</li>
+    <li>Apple iWork</li>
+    <li>JASP (Statistiksoftware)</li>
+  </ul>
+</div>
+<div class="skills-grid">
+<h4 class="skills-title">Sprachen</h4>
+  <ul class="skills-list">
+    <li>Deutsch (Muttersprache)</li>
+    <li>Englisch (B2+/C1) </li>
+    <li>Französisch (B1)</li>
+  </ul>
+</div>
+</section>
+
+<section id="interessen">
+  <h2>Interessen</h2>
+  <p>In meiner Freizeit gehe ich gersfsfne joggen, fahre Rennrad, fotograf....</p>
+  <div class="bento-container">
+    <div class="box" style="grid-area: box-1"></div>
+    <div class="box" style="grid-area: box-2"></div>
+    <div class="box" style="grid-area: box-3"></div>
+    <div class="box" style="grid-area: box-4"></div>
+    <div class="box" style="grid-area: box-5"></div>
+  </div>
+</section>
 
 
 
@@ -93,6 +435,14 @@
     </div>
     <div class="footer-bottom-right">
       <a href="">0,6g CO₂</a>
+      <button id="gridToggle" aria-label="Grid anzeigen" title="Grid anzeigen">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <rect x="0.5" y="0.5" width="5" height="5" rx="0.5" stroke="currentColor"/>
+          <rect x="8.5" y="0.5" width="5" height="5" rx="0.5" stroke="currentColor"/>
+          <rect x="0.5" y="8.5" width="5" height="5" rx="0.5" stroke="currentColor"/>
+          <rect x="8.5" y="8.5" width="5" height="5" rx="0.5" stroke="currentColor"/>
+        </svg>
+      </button>
     </div>
   </div>
 </footer>

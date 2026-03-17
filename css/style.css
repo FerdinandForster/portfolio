@@ -371,6 +371,7 @@ main {
   padding-bottom: 2rem;
 }
 section {
+  padding-top: 80px;
   margin-bottom: 3rem;
 }
 
@@ -434,7 +435,11 @@ footer {
 }
 
 .footer-bottom-right {
-  text-align: right;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 footer .theme-control{
