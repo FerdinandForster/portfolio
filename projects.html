@@ -7,8 +7,9 @@
 
   <link rel="icon" type="image/png" href="assets/favicon.png"/>
   <link rel="stylesheet" href="css/style.css"/>
-  <link rel="stylesheet" href="css/projects.css"/>
   <link rel="stylesheet" href="css/index.css"/>
+  <link rel="stylesheet" href="css/projects.css"/>
+  <link rel="stylesheet" href="css/about.css"/>
 </head>
 
 <body>
@@ -23,7 +24,7 @@
     </a>
 
     <div class="links-wrapper">
-      <a class="contact-btn" href="mailto:ferdinand.forster@icloud.com">
+      <a class="contact-btn" href="mailto:ferdinand.forster@icloud.com" title="E-Mail schreiben" aria-label="E-Mail schreiben">
         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none">
           <path d="M18.2501 3.375L10.383 8.38613C10.116 8.54119 9.81276 8.62286 9.50403 8.62286C9.1953 8.62286 8.89206 8.54119 8.62509 8.38613L0.750092 3.375" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M16.5001 0.75H2.50009C1.53359 0.75 0.750092 1.5335 0.750092 2.5V13C0.750092 13.9665 1.53359 14.75 2.50009 14.75H16.5001C17.4666 14.75 18.2501 13.9665 18.2501 13V2.5C18.2501 1.5335 17.4666 0.75 16.5001 0.75Z" stroke-linecap="round" stroke-linejoin="round"/>
@@ -37,18 +38,18 @@
       </div>
 
       <div id="myLinks">
-        <a class="link-btn" href="index.html">Kontakt</a>
-        <a class="link-btn" href="projects.html">Projekte</a>
-        <a class="link-btn" href="about.html">Über</a>
+        <a class="link-btn" href="projects.html" aria-label="Projekte">Projekte</a>
+        <a class="link-btn" href="gallery.html" aria-label="Fotografie">Galerie</a>
+        <a class="link-btn" href="about.html" aria-label="Über">Über</a>
       </div>
 
-      <button class="burger-menu-button" onclick="toggleMenu()" aria-label="Menü öffnen">
+      <button class="burger-menu-button" onclick="toggleMenu()" title="Menü öffnen" aria-label="Menü öffnen">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 14">
           <path d="M15.9199 12C16.472 12.0003 16.9199 12.4479 16.9199 13C16.9199 13.5521 16.472 13.9997 15.9199 14H1.00098C0.448692 14 0 13.5523 0 13C0 12.4477 0.448692 12 1.00098 12H15.9199ZM15.9199 6C16.472 6.00026 16.9199 6.44788 16.9199 7C16.9199 7.55212 16.472 7.99974 15.9199 8H1.00098C0.448692 8 0 7.55228 0 7C0 6.44772 0.448692 6 1.00098 6H15.9199ZM15.9199 0C16.472 0.000263794 16.9199 0.447878 16.9199 1C16.9199 1.55212 16.472 1.99974 15.9199 2H1.00098C0.448692 2 0 1.55228 0 1C0 0.447715 0.448692 0 1.00098 0H15.9199Z"/>
         </svg>
       </button>
 
-      <button class="close-menu-button" onclick="toggleMenu()" aria-label="Menü schließen">
+      <button class="close-menu-button" onclick="toggleMenu()" title="Menü schließen" aria-label="Menü schließen">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M6 6 L18 18"/>
           <path d="M18 6 L6 18"/>
@@ -60,11 +61,174 @@
 
 <main>
   <div class="hero-wrapper">
-    <h2>Hi, ich bin&nbsp;<span class="name-ferdi"> Ferdi</span><span class="name-nand">nand</span></h2>
-    <p>User Experience Design Student an der Technischen Hochschule in Ingolstadt.</p>
-    <p>Mein Interesse liegt in der Entwicklung einfacher, sinnvoller und langlebiger digitaler Produkte.</p>
-    <div class="cta-btns"></div>
+    <h2>Projekte</h2>
   </div>
+
+  <section class="section-projects">
+<div class="projects-carousel-header">
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">Alle</button>
+    <button class="filter-btn" data-filter="Produktdesign">Produktdesign</button>
+    <button class="filter-btn" data-filter="UI/UX Design">UI/UX Design</button>
+    <button class="filter-btn" data-filter="Studie">Studie</button>
+    <button class="filter-btn" data-filter="Visual Identity">Visual Identity</button>
+  </div>
+  <div class="projects-carousel-nav">
+    <button class="projects-carousel-btn" id="projectsPrev" aria-label="Zurück">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="projects-carousel-btn" id="projectsNext" aria-label="Weiter">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 18L15 12L9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Projekte -->
+<div class="projects-carousel-viewport">
+  <div class="projects-wrapper" id="projectsTrack">
+
+    <button class="project-card"
+            data-category="Produktdesign"
+            data-modal-title="Travis"
+            data-modal-src="modals/travis.html">
+      <div class="project-text">
+        <h3 class="project-title">Travis</h3>
+        <p class="project-subtitle">
+          Ein intelligenter Reisebegleiter, der Interaktiver, sprach- und kamerabasierter Pointer
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/travis/travis_cover.png" alt="Travis" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="Studie"
+            data-modal-title="Nachrichten im digitalen Zeitalter – Gute User Experience?"
+            data-modal-src="modals/psy.html">
+      <div class="project-text">
+        <h3 class="project-title">Nachrichten im digitalen Zeitalter</h3>
+        <p class="project-subtitle">
+          Cross-Media-Vergleich von Nachrichten-Posts der Tagesschau
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/medienpsychologie/medienpsychologie_cover.png" alt="Medienpsychologie" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="Produktdesign"
+            data-modal-title="Plant Power"
+            data-modal-src="modals/plantpower.html">
+      <div class="project-text">
+        <h3 class="project-title">Plant Power</h3>
+        <p class="project-subtitle">
+          Motorisierte Fader machen ökologische Zusammenhänge für Kinder sichtbar und fühlbar.
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/plantpower/plantpower_cover.png" alt="Projektfoto" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="Studie"
+            data-modal-title="Evaluating Autonomous Vehicle Reaction to Bullying: The Role of Perspective and Driving Style"
+            data-modal-src="modals/casestudy.html">
+      <div class="project-text">
+        <h3 class="project-title">Reaktion autonomer Fahrzeuge auf Mobbing</h3>
+        <p class="project-subtitle">
+          Wie sollten autonome Fahrzeuge auf ausbeuterisches oder aggressives Verhalten menschlicher Fahrer reagieren?
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/sdut/sdut_cover.png" alt="STUD" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="Produktdesign"
+            data-modal-title="Block"
+            data-modal-src="modals/block.html">
+      <div class="project-text">
+        <h3 class="project-title">Block</h3>
+        <p class="project-subtitle">
+          Eine minimalistische Fernbedienung, die sich den Bedürfnissen ihres Nutzers anpasst.
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/block/block_cover.png" alt="Block" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="UI/UX Design"
+            data-modal-title="Luftsportclub Kitzingen"
+            data-modal-src="modals/luftsport.html">
+      <div class="project-text">
+        <h3 class="project-title">Luftsportclub Kitzingen</h3>
+        <p class="project-subtitle">
+          Ein freiwilliges Projekt, bei dem ich meinem Verein eine neue
+          Webseite mit WordPress erstellt habe.
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/lsc/lsc_cover.png" alt="LSC" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="UI/UX Design"
+            data-modal-title="InjurEase"
+            data-modal-src="modals/injurease.html">
+      <div class="project-text">
+        <h3 class="project-title">InjurEase</h3>
+        <p class="project-subtitle">
+          Eine Fernrehabilitationslösung für verletzte Sportler die von einer Therapeuten-Plattform begleitet wird
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/injurease/injurease_cover.png" alt="InjurEase" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="Visual Identity"
+            data-modal-title="Quartier G – Alte Gießerei"
+            data-modal-src="modals/quartier.html">
+      <div class="project-text">
+        <h3 class="project-title">Quartier G – Alte Gießerei</h3>
+        <p class="project-subtitle">
+          Auf dem ehemalige Gießereigelände in Ingolstadt entsteht ein
+          Campus. Nun erhält er eine einheitliche Gestaltung.
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/quartierg/quartierg_cover.png" alt="QuartierG" loading="lazy" decoding="async">
+    </button>
+
+    <button class="project-card"
+            data-category="UI/UX Design"
+            data-modal-title="Typografisches Interface"
+            data-modal-src="modals/typo.html">
+      <div class="project-text">
+        <h3 class="project-title">Typografie</h3>
+        <p class="project-subtitle">
+          Ein rein typografisches Informationssystem zu Skigebieten, das aus
+          drei Ebenen besteht
+        </p>
+      </div>
+      <img class="project-image" src="assets/projects/typografie/typo_cover.jpg" alt="Typografie" loading="lazy" decoding="async">
+    </button>
+
+  </div>
+</div>
+
+  <!-- Generisches Modal -->
+  <div id="ProjectModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="ProjectModalTitle"></h3>
+        <button class="close" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M 18 6 L 6 18 M 6 6 L 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" id="ProjectModalBody"></div>
+    </div>
+  </div>
+</section>
 
 </main>
 
@@ -72,10 +236,11 @@
   <div class="footer-top">
     <div class="footer-top-left">
       <a href="projects.html">Projekte</a>
+      <a href="gallery.html">Galerie</a>
       <a href="about.html">Über</a>
     </div>
     <div class="footer-top-right">
-      <div class="theme-control" aria-label="Theme Einstellung">
+      <div class="theme-control" aria-label="Erscheinungsbild" title="Erscheinungsbild">
         <button class="theme-btn" type="button" data-theme="light" aria-pressed="false">Hell</button>
         <button class="theme-btn" type="button" data-theme="dark" aria-pressed="false">Dunkel</button>
         <button class="theme-btn" type="button" data-theme="auto" aria-pressed="true">Auto</button>
@@ -90,7 +255,7 @@
       <a href="accessibility.html">Barrierefreiheit</a>
     </div>
     <div class="footer-bottom-right">
-      <a href="">0,6g CO₂</a>
+      <a title="CO₂-Emissionen" aria-label="CO₂-Emissionen" href="">0,6g CO₂</a>
     </div>
   </div>
 </footer>

@@ -24,7 +24,7 @@
     </a>
 
     <div class="links-wrapper">
-      <a class="contact-btn" href="mailto:ferdinand.forster@icloud.com">
+      <a class="contact-btn" href="mailto:ferdinand.forster@icloud.com" title="E-Mail schreiben" aria-label="E-Mail schreiben">
         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="16" viewBox="0 0 19 16" fill="none">
           <path d="M18.2501 3.375L10.383 8.38613C10.116 8.54119 9.81276 8.62286 9.50403 8.62286C9.1953 8.62286 8.89206 8.54119 8.62509 8.38613L0.750092 3.375" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M16.5001 0.75H2.50009C1.53359 0.75 0.750092 1.5335 0.750092 2.5V13C0.750092 13.9665 1.53359 14.75 2.50009 14.75H16.5001C17.4666 14.75 18.2501 13.9665 18.2501 13V2.5C18.2501 1.5335 17.4666 0.75 16.5001 0.75Z" stroke-linecap="round" stroke-linejoin="round"/>
@@ -38,17 +38,18 @@
       </div>
 
       <div id="myLinks">
-        <a class="link-btn" href="index.html">Projekte</a>
-        <a class="link-btn" href="about.html">Über</a>
+        <a class="link-btn" href="projects.html" aria-label="Projekte">Projekte</a>
+        <a class="link-btn" href="gallery.html" aria-label="Fotografie">Galerie</a>
+        <a class="link-btn" href="about.html" aria-label="Über">Über</a>
       </div>
 
-      <button class="burger-menu-button" onclick="toggleMenu()" aria-label="Menü öffnen">
+      <button class="burger-menu-button" onclick="toggleMenu()" title="Menü öffnen" aria-label="Menü öffnen">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 14">
           <path d="M15.9199 12C16.472 12.0003 16.9199 12.4479 16.9199 13C16.9199 13.5521 16.472 13.9997 15.9199 14H1.00098C0.448692 14 0 13.5523 0 13C0 12.4477 0.448692 12 1.00098 12H15.9199ZM15.9199 6C16.472 6.00026 16.9199 6.44788 16.9199 7C16.9199 7.55212 16.472 7.99974 15.9199 8H1.00098C0.448692 8 0 7.55228 0 7C0 6.44772 0.448692 6 1.00098 6H15.9199ZM15.9199 0C16.472 0.000263794 16.9199 0.447878 16.9199 1C16.9199 1.55212 16.472 1.99974 15.9199 2H1.00098C0.448692 2 0 1.55228 0 1C0 0.447715 0.448692 0 1.00098 0H15.9199Z"/>
         </svg>
       </button>
 
-      <button class="close-menu-button" onclick="toggleMenu()" aria-label="Menü schließen">
+      <button class="close-menu-button" onclick="toggleMenu()" title="Menü schließen" aria-label="Menü schließen">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path d="M6 6 L18 18"/>
           <path d="M18 6 L6 18"/>
@@ -244,16 +245,18 @@
   <div class="footer-top">
     <div class="footer-top-left">
       <a href="projects.html">Projekte</a>
+      <a href="gallery.html">Galerie</a>
       <a href="about.html">Über</a>
     </div>
     <div class="footer-top-right">
-      <div class="theme-control" aria-label="Theme Einstellung">
-      <button class="theme-btn" type="button" data-theme="light" aria-pressed="false">Hell</button>
-      <button class="theme-btn" type="button" data-theme="dark" aria-pressed="false">Dunkel</button>
-      <button class="theme-btn" type="button" data-theme="auto" aria-pressed="true">Auto</button>
+      <div class="theme-control" aria-label="Erscheinungsbild" title="Erscheinungsbild">
+        <button class="theme-btn" type="button" data-theme="light" aria-pressed="false">Hell</button>
+        <button class="theme-btn" type="button" data-theme="dark" aria-pressed="false">Dunkel</button>
+        <button class="theme-btn" type="button" data-theme="auto" aria-pressed="true">Auto</button>
       </div>
     </div>
   </div>
+
   <div class="footer-bottom">
     <div class="footer-bottom-left">
       <a href="imprint.html">Impressum</a>
@@ -261,11 +264,11 @@
       <a href="accessibility.html">Barrierefreiheit</a>
     </div>
     <div class="footer-bottom-right">
-      <a href="">0,6g CO₂</a>
+      <a title="CO₂-Emissionen" aria-label="CO₂-Emissionen" href="">0,6g CO₂</a>
     </div>
   </div>
 </footer>
 
-    <script src="script.js"></script>
-  </body>
+<script src="script.js" defer></script>
+</body>
 </html>
