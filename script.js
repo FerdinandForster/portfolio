@@ -3,18 +3,12 @@
 // =======================
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("#myLinks .link-btn");
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        links.forEach(link => {
-          link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
-        });
-      }
-    });
-  }, { threshold: 0.2 }); // 30% Sichtbarkeit, bevor der Link aktiv wird
-
-  document.querySelectorAll("section[id]").forEach(section => observer.observe(section));
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    link.classList.toggle("active", href === currentPage);
+  });
 });
 
 
@@ -230,76 +224,4 @@ document.addEventListener("DOMContentLoaded", () => {
   track.addEventListener("scroll", updateProjectsCarouselBtns);
   window.addEventListener("resize", updateProjectsCarouselBtns);
   updateProjectsCarouselBtns();
-});
-// =======================
-// Secret Grid Toggle
-// =======================
-document.addEventListener("DOMContentLoaded", () => {
-  const btn = document.getElementById("gridToggle");
-  if (!btn) return;
-
-  const COLS = 12;
-  let overlay = null;
-
-  function buildGrid() {
-    overlay = document.createElement("div");
-    overlay.id = "gridOverlay";
-    overlay.style.cssText = `
-      position: fixed; inset: 0; z-index: 9999;
-      pointer-events: none;
-      display: grid;
-      grid-template-columns: repeat(${COLS}, 1fr);
-      gap: 2rem;
-      padding: 0 max(2rem, calc((100vw - 65em) / 2));
-      box-sizing: border-box;
-    `;
-
-    for (let i = 0; i < COLS; i++) {
-      const col = document.createElement("div");
-      col.style.cssText = `
-        background: rgba(255, 0, 0, 0.12);
-        transform-origin: bottom;
-        transform: scaleY(0);
-        animation: gridReveal 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        animation-delay: ${i * 25}ms;
-      `;
-      overlay.appendChild(col);
-    }
-
-    document.body.appendChild(overlay);
-  }
-
-  function destroyGrid() {
-    if (!overlay) return;
-    [...overlay.children].forEach((col, i) => {
-      col.style.animation = `gridHide 0.3s cubic-bezier(0.7, 0, 0.84, 0) forwards`;
-      col.style.animationDelay = `${i * 15}ms`;
-    });
-    setTimeout(() => { overlay?.remove(); overlay = null; }, 400);
-  }
-
-  // Inject keyframes once
-  const style = document.createElement("style");
-  style.textContent = `
-    @keyframes gridReveal {
-      from { transform: scaleY(0); }
-      to   { transform: scaleY(1); }
-    }
-    @keyframes gridHide {
-      from { transform: scaleY(1); }
-      to   { transform: scaleY(0); }
-    }
-    #gridToggle {
-      background: none; border: none; cursor: pointer;
-      color: inherit; opacity: 0.3; padding: 0;
-      transition: opacity 0.2s;
-    }
-    #gridToggle:hover, #gridToggle.active { opacity: 1; }
-  `;
-  document.head.appendChild(style);
-
-  btn.addEventListener("click", () => {
-    const isActive = btn.classList.toggle("active");
-    isActive ? buildGrid() : destroyGrid();
-  });
 });

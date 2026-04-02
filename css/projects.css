@@ -1,3 +1,9 @@
+.section-projects {
+  background-color: var(--secondary);
+  border-radius: var(--border-radius-lg);
+}
+
+
 /* Filter + Carousel-Header */
 .projects-carousel-header {
   display: flex;
@@ -83,8 +89,7 @@
 /* Projects Carousel Viewport + Track */
 .projects-carousel-viewport {
   overflow: hidden;
-  margin-left: -20px;
-  margin-right: -20px;
+  color: var(--secondary);
 }
 
 .projects-wrapper::after {
@@ -95,6 +100,7 @@
 }
 
 .projects-wrapper {
+  color: var(--secondary);
   display: flex;
   gap: 1rem;
   padding: 1rem 0 2rem 20px;
