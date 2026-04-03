@@ -229,6 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // =======================
 // Lightbox
 // =======================
+/*
 (function () {
   const lightbox    = document.getElementById("lightbox");
   if (!lightbox) return;
@@ -301,3 +302,4 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "Escape")     close();
   });
 })();
+*/

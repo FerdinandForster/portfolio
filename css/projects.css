@@ -1,14 +1,21 @@
 .section-projects {
-  background-color: var(--secondary);
-  border-radius: var(--border-radius-lg);
+  background-color: var(--element-secondary);
+  border-radius: 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  overflow: hidden;
 }
 
 
-/* Filter + Carousel-Header */
 .projects-carousel-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: 100%;
 }
 
 .filter-buttons {
@@ -86,26 +93,13 @@
   stroke-linecap: round;
 }
 
-/* Projects Carousel Viewport + Track */
-.projects-carousel-viewport {
-  overflow: hidden;
-  color: var(--secondary);
-}
 
-.projects-wrapper::after {
-  content: '';
-  display: block;
-  min-width: 20px;
-  flex-shrink: 0;
-}
 
 .projects-wrapper {
   color: var(--secondary);
   display: flex;
   gap: 1rem;
-  padding: 1rem 0 2rem 20px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -118,7 +112,7 @@
   flex: 0 0 100%;
   scroll-snap-align: start;
   border: none;
-  background-color: var(--element-secondary);
+  background-color: var(--element-primary);
   cursor: pointer;
   width: 100%;
   text-align: left;
@@ -284,7 +278,6 @@
   background-color: var(--element-secondary);
 }
 
-/* Image-Carousel im Modal (carousel__button bleibt unangetastet) */
 .carousel {
   position: relative;
   width: min(1100px, 100%);
@@ -327,8 +320,6 @@
   user-select: none;
   -webkit-user-drag: none;
 }
-
-/* Image-Carousel Buttons im Modal */
 .carousel__button {
   position: absolute;
   top: 50%;
@@ -391,6 +382,7 @@
 
 /* Responsive – Tablet */
 @media (min-width: 501px) {
+
   .projects-carousel-nav {
     display: flex;
   }
@@ -451,6 +443,10 @@
 
 /* Responsive – Desktop */
 @media (min-width: 939px) {
+    .projects-wrapper {
+    padding: 0.5rem calc((100% - var(--max-width)) / 2);
+  }
+
   .project-card {
     flex: 0 0 calc(33.333% - 0.667rem);
   }
