@@ -21,6 +21,66 @@ function toggleMenu() {
   document.querySelector(".profile-info").classList.toggle("hidden");
 }
 
+// =======================
+// Contact Dropdown
+// =======================
+document.addEventListener("DOMContentLoaded", () => {
+  const contactCtaWrapper = document.querySelector(".contact-cta-wrapper");
+  const contactDropdownTrigger = document.querySelector(".contact-dropdown-trigger");
+  const contactDropdown = document.querySelector(".contact-dropdown");
+
+  if (!contactCtaWrapper || !contactDropdownTrigger || !contactDropdown) return;
+
+  let closeTimer;
+
+  function openContactDropdown() {
+    clearTimeout(closeTimer);
+    contactCtaWrapper.classList.add("is-open");
+    contactDropdownTrigger.setAttribute("aria-expanded", "true");
+  }
+
+  function closeContactDropdown() {
+    closeTimer = setTimeout(() => {
+      contactCtaWrapper.classList.remove("is-open");
+      contactDropdownTrigger.setAttribute("aria-expanded", "false");
+    }, 120);
+  }
+
+  contactDropdownTrigger.addEventListener("mouseenter", openContactDropdown);
+  contactDropdownTrigger.addEventListener("mouseleave", closeContactDropdown);
+
+  contactDropdown.addEventListener("mouseenter", openContactDropdown);
+  contactDropdown.addEventListener("mouseleave", closeContactDropdown);
+
+  contactDropdownTrigger.addEventListener("focus", openContactDropdown);
+
+  contactCtaWrapper.addEventListener("focusout", event => {
+    if (!contactCtaWrapper.contains(event.relatedTarget)) {
+      contactCtaWrapper.classList.remove("is-open");
+      contactDropdownTrigger.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  contactDropdownTrigger.addEventListener("click", event => {
+    event.preventDefault();
+
+    if (contactCtaWrapper.classList.contains("is-open")) {
+      contactCtaWrapper.classList.remove("is-open");
+      contactDropdownTrigger.setAttribute("aria-expanded", "false");
+    } else {
+      openContactDropdown();
+    }
+  });
+
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      contactCtaWrapper.classList.remove("is-open");
+      contactDropdownTrigger.setAttribute("aria-expanded", "false");
+      contactDropdownTrigger.focus();
+    }
+  });
+});
+
 
 // =======================
 // Accordion

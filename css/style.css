@@ -6,7 +6,7 @@
   --font-size-xlarge: 1.15rem;
   --font-size-medium: 1rem;
   --font-size-small: .8rem;
-  --max-width: 65em; /* ca. 65em */
+  --max-width: 65em; /* calc(min(89.5rem, 100vw) - clamp(2rem, 1.0816326530612246rem + 3.9183673469387754vw, 5rem) * 2)*/
     }
 
 /* -----------------------------*/
@@ -126,7 +126,7 @@ body {
 
 /* Header und Navbar */
 header {
-  overflow: hidden;
+  overflow: visible;
   top: 0;
   width: 100%;
   z-index: 1;
@@ -215,26 +215,132 @@ header::before {
   display: flex;
   align-items: center;
 }
-.contact-btn {
-  border: none;
-  background-color: transparent;
-  display: flex;
-  width: 40px;
-  height: 40px;
-  flex-direction: column;
-  justify-content: center;
+.contact-cta-wrapper {
+  position: relative;
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
-  align-self: stretch;
-  border-radius: var(--border-radius-lg);
-  stroke: var(--primary);
-  stroke-width: 1.5;
-  transition: background-color 0.2s ease;
-
 }
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px 16px;
+
+  color: var(--color-bg-default);
+  background-color: var(--primary);
+
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+
+  border: none;
+  border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+
+  transition: opacity 0.2s ease;
+}
+
 .contact-btn:hover {
+  opacity: 0.85;
+}
+
+.contact-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 34px;
+  padding: 10px 12px;
+  color: var(--color-bg-default);
+  background-color: var(--primary);
+  border: none;
+  border-left: 1px solid color-mix(in srgb, var(--color-bg-default) 28%, transparent);
+  border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.contact-dropdown-trigger:hover {
+  opacity: 0.85;
+}
+
+.contact-dropdown-icon {
+    display: block;
+  width: 1em;
+
+  height: auto;
+
+  transition: transform 0.2s ease;
+}
+
+.contact-dropdown {
+  z-index: 2000;
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+
+  min-width: 180px;
+  padding: 6px;
+
+  background: var(--color-bg-default);
+  border: 1px solid var(--color-stroke-default);
+  border-radius: var(--border-radius-lg);
+
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+.contact-dropdown a {
+  display: block;
+  padding: 10px 10px;
+
+  color: var(--primary);
+  text-decoration: none;
+
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: calc(var(--border-radius-lg) - 2px);
+}
+
+.contact-dropdown a:hover {
   background-color: var(--element-secondary);
 }
+
+.contact-cta-wrapper.is-open .contact-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.contact-cta-wrapper.is-open .contact-dropdown-icon {
+  transform: rotate(180deg);
+}
+
+.contact-dropdown-trigger:hover + .contact-dropdown,
+.contact-dropdown:hover,
+.contact-cta-wrapper:focus-within .contact-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.contact-dropdown-trigger:hover .contact-dropdown-icon,
+.contact-cta-wrapper:focus-within .contact-dropdown-icon {
+  transform: rotate(180deg);
+}
+
+
+
 .vl {
   display: flex;
 width: 16px;
