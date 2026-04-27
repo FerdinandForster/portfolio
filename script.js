@@ -46,36 +46,51 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 120);
   }
 
+  function closeContactDropdownNow() {
+    clearTimeout(closeTimer);
+    contactCtaWrapper.classList.remove("is-open");
+    contactDropdownTrigger.setAttribute("aria-expanded", "false");
+  }
+
+  // Desktop: Hover nur auf Trigger und Dropdown
   contactDropdownTrigger.addEventListener("mouseenter", openContactDropdown);
   contactDropdownTrigger.addEventListener("mouseleave", closeContactDropdown);
 
   contactDropdown.addEventListener("mouseenter", openContactDropdown);
   contactDropdown.addEventListener("mouseleave", closeContactDropdown);
 
+  // Tastatur / Tablet-Fokus
   contactDropdownTrigger.addEventListener("focus", openContactDropdown);
 
   contactCtaWrapper.addEventListener("focusout", event => {
     if (!contactCtaWrapper.contains(event.relatedTarget)) {
-      contactCtaWrapper.classList.remove("is-open");
-      contactDropdownTrigger.setAttribute("aria-expanded", "false");
+      closeContactDropdownNow();
     }
   });
 
+  // Touch / Klick auf Trigger
   contactDropdownTrigger.addEventListener("click", event => {
     event.preventDefault();
+    event.stopPropagation();
 
     if (contactCtaWrapper.classList.contains("is-open")) {
-      contactCtaWrapper.classList.remove("is-open");
-      contactDropdownTrigger.setAttribute("aria-expanded", "false");
+      closeContactDropdownNow();
     } else {
       openContactDropdown();
     }
   });
 
+  // Klick/Tap außerhalb schließt das Dropdown
+  document.addEventListener("pointerdown", event => {
+    if (!contactCtaWrapper.contains(event.target)) {
+      closeContactDropdownNow();
+    }
+  });
+
+  // Escape schließt
   document.addEventListener("keydown", event => {
     if (event.key === "Escape") {
-      contactCtaWrapper.classList.remove("is-open");
-      contactDropdownTrigger.setAttribute("aria-expanded", "false");
+      closeContactDropdownNow();
       contactDropdownTrigger.focus();
     }
   });
@@ -182,8 +197,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   modal.querySelector(".close").addEventListener("click", closeModal);
 
-  window.addEventListener("click", e => { if (e.target === modal) closeModal(); });
-  window.addEventListener("keydown", e => { if (e.key === "Escape" && modal.style.display === "block") closeModal(); });
+// Klick/Tap auf den Hintergrund schließt das Modal
+window.addEventListener("pointerdown", e => {
+  if (e.target === modal) closeModal();
+});
+
+// Escape schließt das Modal
+window.addEventListener("keydown", e => {
+  if (e.key === "Escape" && modal.style.display === "block") {
+    closeModal();
+  }
+});
+
+// Wenn der Fokus aus dem Modal herauswandert, schließt es sich
+document.addEventListener("focusin", e => {
+  if (
+    modal.style.display === "block" &&
+    !modal.querySelector(".modal-content").contains(e.target)
+  ) {
+    closeModal();
+  }
+});
 });
 
 

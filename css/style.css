@@ -6,7 +6,7 @@
   --font-size-xlarge: 1.15rem;
   --font-size-medium: 1rem;
   --font-size-small: .8rem;
-  --max-width: 65em; /* calc(min(89.5rem, 100vw) - clamp(2rem, 1.0816326530612246rem + 3.9183673469387754vw, 5rem) * 2)*/
+  --max-width: calc(min(89.5rem, 100vw) - clamp(2rem, 1.0816326530612246rem + 3.9183673469387754vw, 5rem) * 2); /* 65em    calc(min(89.5rem, 100vw) - clamp(2rem, 1.0816326530612246rem + 3.9183673469387754vw, 5rem) * 2)*/
     }
 
 /* -----------------------------*/
