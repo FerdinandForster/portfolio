@@ -24,7 +24,7 @@
 }
 
 .hero-wrapper h2:hover .name-nand {
-  max-width: 200px;        /* großzügig – muss nur größer als der Text sein */
+  max-width: 200px;
   opacity: 1;
   transform: translateX(0);
 }

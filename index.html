@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/index.css"/>
   <link rel="stylesheet" href="css/projects.css"/>
-  <link rel="stylesheet" href="css/about.css"/>
 </head>
 
 <body>
@@ -38,9 +37,9 @@
       </div>
 
       <div id="myLinks">
-        <a class="link-btn" href="index.html" aria-label="Startseite">Startseite</a>
         <a class="link-btn" href="projects.html" aria-label="Projekte">Projekte</a>
         <a class="link-btn" href="about.html" aria-label="Über">Über</a>
+        <a class="link-btn" href="gallery.html" aria-label="Startseite">Galerie</a>
       </div>
 
       <button class="burger-menu-button" onclick="toggleMenu()" title="Menü öffnen" aria-label="Menü öffnen">
@@ -62,178 +61,12 @@
 <main>
   <div class="hero-wrapper">
     <h2>Hi, ich bin&nbsp;<span class="name-ferdi"> Ferdi</span><span class="name-nand">nand</span></h2>
-    <h2>Fo(r)stering Better Experiences</h2>
-    <p>Derzeit studiere ich User Experience Design (B.Sc.) an der Technischen Hochschule in Ingolstadt im siebten Semester.<span class="pulsing-dot"></span></p>
-    <p>Mein Hintergrund reicht vom Freiwilligen Sozialen Jahr im Rettungsdienst mit Abschluss als Rettungssanitäter bis zum Praxissemester in der Konzeptentwicklung bei Audi.</p>
-    <p>Abseits davon finde ich Ausgleich beim Rennradfahren, Joggen, Bouldern und beim Sammeln und Organisieren alter iPods und Musikmediatheken.</p>
-    <div class="cta-btns"></div>
+    <p>Derzeit studiere ich User Experience Design (B.Sc.) an der Technischen Hochschule Ingolstadt im siebten Semester und zeige in meinen <a href="projects.html" aria-label="Projekte">Projekten</a>, wie ich nutzerzentrierte Konzepte, Interfaces und digitale Produkte gestalte.</p>    
+    <p>Meine <a href="about.html#erfahrung">Erfahrungen</a> reichen vom FSJ im Rettungsdienst mit Abschluss als Rettungssanitäter bis zum Praxissemester in der Konzeptentwicklung bei Audi. Meine <a href="about.html#kenntnisse">Kenntnisse</a> erweitere ich im Studium, in praktischen Übungen und durch persönliche Projekte kontinuierlich weiter.</p>
+    <p>Abseits davon finde ich Ausgleich in meinen <a href="about.html#interessen">Interessen</a>: beim <a href="gallery.html" aria-label="Fotografieren">Fotografieren</a>, Rennradfahren, Joggen, Bouldern und beim Sammeln und Organisieren alter iPods und Musikmediatheken.</p>
   </div>
 
-    <section class="section-projects">
-<div class="projects-carousel-header">
-  <div class="filter-buttons">
-    <button class="filter-btn active" data-filter="all">Alle</button>
-    <button class="filter-btn" data-filter="Produktdesign">Produktdesign</button>
-    <button class="filter-btn" data-filter="UI/UX Design">UI/UX Design</button>
-    <button class="filter-btn" data-filter="Studie">Studie</button>
-    <button class="filter-btn" data-filter="Visual Identity">Visual Identity</button>
-  </div>
-  <div class="projects-carousel-nav">
-    <button class="projects-carousel-btn" id="projectsPrev" aria-label="Zurück">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M15 18L9 12L15 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-    <button class="projects-carousel-btn" id="projectsNext" aria-label="Weiter">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 18L15 12L9 6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-  </div>
-</div>
-
-<!-- Projekte -->
-<div class="projects-carousel-viewport">
-  <div class="projects-wrapper" id="projectsTrack">
-
-    <button class="project-card"
-            data-category="Produktdesign"
-            data-modal-title="Travis"
-            data-modal-src="modals/travis.html">
-      <div class="project-text">
-        <h3 class="project-title">Travis</h3>
-        <p class="project-subtitle">
-          Ein intelligenter Reisebegleiter, der Interaktiver, sprach- und kamerabasierter Pointer
-        </p>
-      </div>
-      <img class="project-image" src="assets/projects/travis/travis_cover.png" alt="Travis" loading="lazy" decoding="async">
-    </button>
-
-    <button class="project-card"
-            data-category="Studie"
-            data-modal-title="Nachrichten im digitalen Zeitalter – Gute User Experience?"
-            data-modal-src="modals/psy.html">
-      <div class="project-text">
-        <h3 class="project-title">Nachrichten im digitalen Zeitalter</h3>
-        <p class="project-subtitle">
-          Cross-Media-Vergleich von Nachrichten-Posts der Tagesschau
-        </p>
-      </div>
-      <img class="project-image" src="assets/projects/medienpsychologie/medienpsychologie_cover.png" alt="Medienpsychologie" loading="lazy" decoding="async">
-    </button>
-
-    <button class="project-card"
-            data-category="Produktdesign"
-            data-modal-title="Plant Power"
-            data-modal-src="modals/plantpower.html">
-      <div class="project-text">
-        <h3 class="project-title">Plant Power</h3>
-        <p class="project-subtitle">
-          Motorisierte Fader machen ökologische Zusammenhänge für Kinder sichtbar und fühlbar.
-        </p>
-      </div>
-      <img class="project-image" src="assets/projects/plantpower/plantpower_cover.png" alt="Projektfoto" loading="lazy" decoding="async">
-    </button>
-
-    <button class="project-card"
-            data-category="Studie"
-            data-modal-title="Evaluating Autonomous Vehicle Reaction to Bullying: The Role of Perspective and Driving Style"
-            data-modal-src="modals/casestudy.html">
-      <div class="project-text">
-        <h3 class="project-title">Reaktion autonomer Fahrzeuge auf Mobbing</h3>
-        <p class="project-subtitle">
-          Wie sollten autonome Fahrzeuge auf ausbeuterisches oder aggressives Verhalten menschlicher Fahrer reagieren?
-        </p>
-      </div>
-      <img class="project-image" src="assets/projects/sdut/sdut_cover.png" alt="STUD" loading="lazy" decoding="async">
-    </button>
-
-    <button class="project-card"
-            data-category="Produktdesign"
-            data-modal-title="Block"
-            data-modal-src="modals/block.html">
-      <div class="project-text">
-        <h3 class="project-title">Block</h3>
-        <p class="project-subtitle">
-          Eine minimalistische Fernbedienung, die sich den Bedürfnissen ihres Nutzers anpasst.
-        </p>
-      </div>
-      <img class="project-image" src="assets/projects/block/block_cover.png" alt="Block" loading="lazy" decoding="async">
-    </button>
-
-    <button class="project-card"
-            data-category="UI/UX Design"
-            data-modal-title="Luftsportclub Kitzingen"
-            data-modal-src="modals/luftsport.html">
-      <div class="project-text">
-        <h3 class="project-title">Luftsportclub Kitzingen</h3>
-        <p class="project-subtitle">
-          Ein freiwilliges Projekt, bei dem ich meinem Verein eine neue
-          Webseite mit WordPress erstellt habe.
-        </p>
-      </div>
-      <img class="project-image" src="assets/projects/lsc/lsc_cover.png" alt="LSC" loading="lazy" decoding="async">
-    </button>
-
-    <button class="project-card"
-            data-category="UI/UX Design"
-            data-modal-title="InjurEase"
-            data-modal-src="modals/injurease.html">
-      <div class="project-text">
-        <h3 class="project-title">InjurEase</h3>
-        <p class="project-subtitle">
-          Eine Fernrehabilitationslösung für verletzte Sportler die von einer Therapeuten-Plattform begleitet wird
-        </p>
-      </div>
-      <img class="project-image" src="assets/projects/injurease/injurease_cover.png" alt="InjurEase" loading="lazy" decoding="async">
-    </button>
-
-    <button class="project-card"
-            data-category="Visual Identity"
-            data-modal-title="Quartier G – Alte Gießerei"
-            data-modal-src="modals/quartier.html">
-      <div class="project-text">
-        <h3 class="project-title">Quartier G – Alte Gießerei</h3>
-        <p class="project-subtitle">
-          Auf dem ehemalige Gießereigelände in Ingolstadt entsteht ein
-          Campus. Nun erhält er eine einheitliche Gestaltung.
-        </p>
-      </div>
-      <img class="project-image" src="assets/projects/quartierg/quartierg_cover.png" alt="QuartierG" loading="lazy" decoding="async">
-    </button>
-
-    <button class="project-card"
-            data-category="UI/UX Design"
-            data-modal-title="Typografisches Interface"
-            data-modal-src="modals/typo.html">
-      <div class="project-text">
-        <h3 class="project-title">Typografie</h3>
-        <p class="project-subtitle">
-          Ein rein typografisches Informationssystem zu Skigebieten, das aus
-          drei Ebenen besteht
-        </p>
-      </div>
-      <img class="project-image" src="assets/projects/typografie/typo_cover.jpg" alt="Typografie" loading="lazy" decoding="async">
-    </button>
-
-  </div>
-</div>
-
-  <!-- Generisches Modal -->
-  <div id="ProjectModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="ProjectModalTitle"></h3>
-        <button class="close" aria-label="Close">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-            <path d="M 18 6 L 6 18 M 6 6 L 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-      <div class="modal-body" id="ProjectModalBody"></div>
-    </div>
-  </div>
-</section>
+    
 
 
 

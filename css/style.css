@@ -1,6 +1,7 @@
 :root {
   --border-radius: 6px;
   --border-radius-lg: 10px;
+  
 
   --font-size-large: 1.4rem;
   --font-size-xlarge: 1.15rem;
@@ -122,6 +123,7 @@ body {
   background-color: var(--color-bg-default);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 /* Header und Navbar */
@@ -376,6 +378,9 @@ main {
   align-items: flex-start;
   padding-top: 10rem;
   padding-bottom: 2rem;
+}
+.hero-wrapper p {
+  max-width: 90ch;
 }
 section {
 
