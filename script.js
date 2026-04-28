@@ -214,38 +214,6 @@ function initCarouselInside(scope) {
 
 
 // =======================
-// Projects Carousel
-// =======================
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.getElementById("projectsTrack");
-  const prevBtn = document.getElementById("projectsPrev");
-  const nextBtn = document.getElementById("projectsNext");
-  if (!track || !prevBtn || !nextBtn) return;
-
-  function getVisibleCount() {
-    if (window.innerWidth >= 939) return 3;
-    if (window.innerWidth >= 501) return 2;
-    return 1;
-  }
-
-  function cardWidth() {
-    const card = track.querySelector(".project-card:not(.hidden)");
-    return card ? card.offsetWidth + 16 : 0;
-  }
-
-  window.updateProjectsCarouselBtns = function () {
-    prevBtn.disabled = track.scrollLeft <= 4;
-    nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.offsetWidth - 4;
-  };
-
-  prevBtn.addEventListener("click", () => { track.scrollLeft -= cardWidth() * getVisibleCount(); });
-  nextBtn.addEventListener("click", () => { track.scrollLeft += cardWidth() * getVisibleCount(); });
-  track.addEventListener("scroll", updateProjectsCarouselBtns);
-  window.addEventListener("resize", updateProjectsCarouselBtns);
-  updateProjectsCarouselBtns();
-});
-
-// =======================
 // Lightbox
 // =======================
 
