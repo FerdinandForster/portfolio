@@ -13,8 +13,6 @@
   display: flex;
   align-items: center;
   border-radius: var(--border-radius-lg);
-}
-.view-wrapper:hover {
   background-color: var(--element-secondary);
 }
 
@@ -113,7 +111,7 @@
 
 
 .projects-wrapper {
-display: flex;
+  display: flex;
   justify-content: stretch;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -121,14 +119,12 @@ display: flex;
 }
 
 .project-card {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
+  padding: .75rem;
+  background-color: var(--color-stroke-default);
   border: none;
-  background-color: var(--element-secondary);
   cursor: pointer;
   width: 100%;
   text-align: left;
-  padding: 0;
   display: flex;
   flex-direction: column;
   border-radius: var(--border-radius-lg);
@@ -146,11 +142,12 @@ display: flex;
 .project-image {
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 3; /* 4 / 3 */
   object-fit: cover;
   flex-shrink: 0;
   border-radius: 0;
   background-color: var(--element-secondary);
+  border-radius: var(--border-radius);
   display: block;
 }
 
@@ -158,11 +155,11 @@ display: flex;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 14px 16px 18px;
+  padding: 14px 0 18px;
 }
 
 .project-title {
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-xlarge);
   font-weight: 600;
   margin: 0;
   color: var(--primary);
@@ -173,6 +170,26 @@ display: flex;
   color: var(--secondary);
   line-height: 1.5;
   margin: 0;
+}
+.project-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: var(--font-size-small);
+  color: var(--secondary);
+}
+
+.project-tag {
+  background-color: var(--element-secondary);
+  color: var(--secondary);
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+}
+.project-main-tag {
+  background-color: var(--primary);
+  color: white;
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
 }
 
 /* Modal */
@@ -402,9 +419,6 @@ display: flex;
     gap: 20px;
       }
 
-  .project-card {
-    flex: 0 0 calc(50% - 0.5rem);
-  }
 
   .modal {
     display: none;
@@ -464,10 +478,6 @@ display: flex;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-  }
-
-  .project-card {
-    flex: 0 0 calc(33.333% - 0.667rem);
   }
 
   .modal {

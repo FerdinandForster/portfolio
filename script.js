@@ -211,7 +211,80 @@ function initCarouselInside(scope) {
 
   updateButtons();
 }
+// =======================
+// Contact Dropdown
+// =======================
+document.addEventListener("DOMContentLoaded", () => {
+  const contactCtaWrapper = document.querySelector(".contact-cta-wrapper");
+  const contactDropdownTrigger = document.querySelector(".contact-dropdown-trigger");
+  const contactDropdown = document.querySelector(".contact-dropdown");
 
+  if (!contactCtaWrapper || !contactDropdownTrigger || !contactDropdown) return;
+
+  let closeTimer;
+
+  function openContactDropdown() {
+    clearTimeout(closeTimer);
+    contactCtaWrapper.classList.add("is-open");
+    contactDropdownTrigger.setAttribute("aria-expanded", "true");
+  }
+
+  function closeContactDropdown() {
+    closeTimer = setTimeout(() => {
+      contactCtaWrapper.classList.remove("is-open");
+      contactDropdownTrigger.setAttribute("aria-expanded", "false");
+    }, 120);
+  }
+
+  function closeContactDropdownNow() {
+    clearTimeout(closeTimer);
+    contactCtaWrapper.classList.remove("is-open");
+    contactDropdownTrigger.setAttribute("aria-expanded", "false");
+  }
+
+  // Desktop: Hover nur auf Trigger und Dropdown
+  contactDropdownTrigger.addEventListener("mouseenter", openContactDropdown);
+  contactDropdownTrigger.addEventListener("mouseleave", closeContactDropdown);
+
+  contactDropdown.addEventListener("mouseenter", openContactDropdown);
+  contactDropdown.addEventListener("mouseleave", closeContactDropdown);
+
+  // Tastatur / Tablet-Fokus
+  contactDropdownTrigger.addEventListener("focus", openContactDropdown);
+
+  contactCtaWrapper.addEventListener("focusout", event => {
+    if (!contactCtaWrapper.contains(event.relatedTarget)) {
+      closeContactDropdownNow();
+    }
+  });
+
+  // Touch / Klick auf Trigger
+  contactDropdownTrigger.addEventListener("click", event => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (contactCtaWrapper.classList.contains("is-open")) {
+      closeContactDropdownNow();
+    } else {
+      openContactDropdown();
+    }
+  });
+
+  // Klick/Tap außerhalb schließt das Dropdown
+  document.addEventListener("pointerdown", event => {
+    if (!contactCtaWrapper.contains(event.target)) {
+      closeContactDropdownNow();
+    }
+  });
+
+  // Escape schließt
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      closeContactDropdownNow();
+      contactDropdownTrigger.focus();
+    }
+  });
+});
 
 // =======================
 // Lightbox

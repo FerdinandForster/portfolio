@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="css/style.css"/>
   <link rel="stylesheet" href="css/index.css"/>
   <link rel="stylesheet" href="css/projects.css"/>
+  <link rel="stylesheet" href="css/about.css"/>
 </head>
 
 <body>
@@ -39,7 +40,6 @@
       <div id="myLinks">
         <a class="link-btn" href="projects.html" aria-label="Projekte">Projekte</a>
         <a class="link-btn" href="about.html" aria-label="Über">Über</a>
-        <a class="link-btn" href="gallery.html" aria-label="Startseite">Galerie</a>
       </div>
 
       <button class="burger-menu-button" onclick="toggleMenu()" title="Menü öffnen" aria-label="Menü öffnen">
@@ -66,7 +66,218 @@
     <p>Abseits davon finde ich Ausgleich in meinen <a href="about.html#interessen">Interessen</a>: beim <a href="gallery.html" aria-label="Fotografieren">Fotografieren</a>, Rennradfahren, Joggen, Bouldern und beim Sammeln und Organisieren alter iPods und Musikmediatheken.</p>
   </div>
 
-    
+  <section class="section-projects">
+<div class="projects-tools">
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">Alle</button>
+    <button class="filter-btn" data-filter="Produktdesign">Produktdesign</button>
+    <button class="filter-btn" data-filter="UI/UX Design">UI/UX Design</button>
+    <button class="filter-btn" data-filter="Studie">Studie</button>
+    <button class="filter-btn" data-filter="Visual Identity">Visual Identity</button>
+  </div>
+  <div class="view-wrapper">
+      <a class="gallery-btn" title="Galerieansicht" aria-label="Galerie ansicht">
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="currentColor">
+          <path d="M1.11914 4.91016C0.375 4.91016 0 4.54102 0 3.76758V1.14258C0 0.375 0.375 0 1.11914 0H3.79102C4.53516 0 4.91016 0.375 4.91016 1.14258V3.76758C4.91016 4.54102 4.53516 4.91016 3.79102 4.91016H1.11914ZM7.00195 4.91016C6.25195 4.91016 5.87695 4.54102 5.87695 3.76758V1.14258C5.87695 0.375 6.25195 0 7.00195 0H9.66797C10.4121 0 10.7871 0.375 10.7871 1.14258V3.76758C10.7871 4.54102 10.4121 4.91016 9.66797 4.91016H7.00195ZM1.13086 4.08398H3.77344C3.97852 4.08398 4.08398 3.97852 4.08398 3.76172V1.14258C4.08398 0.931641 3.97852 0.826172 3.77344 0.826172H1.13086C0.925781 0.826172 0.826172 0.931641 0.826172 1.14258V3.76172C0.826172 3.97852 0.925781 4.08398 1.13086 4.08398ZM7.01367 4.08398H9.65625C9.86133 4.08398 9.96094 3.97852 9.96094 3.76172V1.14258C9.96094 0.931641 9.86133 0.826172 9.65625 0.826172H7.01367C6.80273 0.826172 6.70312 0.931641 6.70312 1.14258V3.76172C6.70312 3.97852 6.80273 4.08398 7.01367 4.08398ZM1.11914 10.7871C0.375 10.7871 0 10.418 0 9.64453V7.02539C0 6.25195 0.375 5.88281 1.11914 5.88281H3.79102C4.53516 5.88281 4.91016 6.25195 4.91016 7.02539V9.64453C4.91016 10.418 4.53516 10.7871 3.79102 10.7871H1.11914ZM7.00195 10.7871C6.25195 10.7871 5.87695 10.418 5.87695 9.64453V7.02539C5.87695 6.25195 6.25195 5.88281 7.00195 5.88281H9.66797C10.4121 5.88281 10.7871 6.25195 10.7871 7.02539V9.64453C10.7871 10.418 10.4121 10.7871 9.66797 10.7871H7.00195ZM1.13086 9.96094H3.77344C3.97852 9.96094 4.08398 9.85547 4.08398 9.65039V7.02539C4.08398 6.81445 3.97852 6.70898 3.77344 6.70898H1.13086C0.925781 6.70898 0.826172 6.81445 0.826172 7.02539V9.65039C0.826172 9.85547 0.925781 9.96094 1.13086 9.96094ZM7.01367 9.96094H9.65625C9.86133 9.96094 9.96094 9.85547 9.96094 9.65039V7.02539C9.96094 6.81445 9.86133 6.70898 9.65625 6.70898H7.01367C6.80273 6.70898 6.70312 6.81445 6.70312 7.02539V9.65039C6.70312 9.85547 6.80273 9.96094 7.01367 9.96094Z"/>
+        </svg>
+      </a>
+            <div class="vl-view">
+        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="20" viewBox="0 0 2 20" fill="none">
+          <path d="M1.20019 19.4004C1.19998 19.7316 0.930849 20 0.599609 20C0.268548 19.9998 0.000210271 19.7315 -8.48018e-07 19.4004L-2.62098e-08 0.599609C0.000210929 0.268548 0.268548 0.0002109 0.599609 -2.62524e-08C0.93085 -1.17735e-08 1.19998 0.268418 1.2002 0.599609L1.20019 19.4004Z" fill="currentColor" />
+        </svg>
+      </div>
+      <a class="list-btn" title="Listenansicht" aria-label="Listenansicht">
+        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9" fill="currentColor">
+          <path d="M0.738281 1.47656C0.328125 1.47656 0 1.14844 0 0.738281C0 0.333984 0.328125 0 0.738281 0C1.14844 0 1.47656 0.333984 1.47656 0.738281C1.47656 1.14844 1.14844 1.47656 0.738281 1.47656ZM3.32812 1.21289C3.05859 1.21289 2.85352 1.00781 2.85352 0.738281C2.85352 0.474609 3.05859 0.269531 3.32812 0.269531H11.3262C11.5898 0.269531 11.8066 0.474609 11.8066 0.738281C11.8066 1.00781 11.5898 1.21289 11.3262 1.21289H3.32812ZM0.738281 5.02148C0.328125 5.02148 0 4.69336 0 4.2832C0 3.87305 0.328125 3.54492 0.738281 3.54492C1.14844 3.54492 1.47656 3.87305 1.47656 4.2832C1.47656 4.69336 1.14844 5.02148 0.738281 5.02148ZM3.32812 4.75195C3.05859 4.75195 2.85352 4.54688 2.85352 4.2832C2.85352 4.01953 3.05859 3.80859 3.32812 3.80859H11.3262C11.5898 3.80859 11.8066 4.01953 11.8066 4.2832C11.8066 4.54688 11.5898 4.75195 11.3262 4.75195H3.32812ZM0.738281 8.56055C0.328125 8.56055 0 8.23242 0 7.82227C0 7.41797 0.328125 7.08984 0.738281 7.08984C1.14844 7.08984 1.47656 7.41797 1.47656 7.82227C1.47656 8.23242 1.14844 8.56055 0.738281 8.56055ZM3.32812 8.29688C3.05859 8.29688 2.85352 8.0918 2.85352 7.82227C2.85352 7.55859 3.05859 7.35352 3.32812 7.35352H11.3262C11.5898 7.35352 11.8066 7.55859 11.8066 7.82227C11.8066 8.0918 11.5898 8.29688 11.3262 8.29688H3.32812Z"/>
+      </svg>
+      </a>
+  </div>
+</div>
+
+<!-- Projekte -->
+  <div class="projects-wrapper">
+
+    <button class="project-card"
+            data-category="Produktdesign"
+            data-modal-title="Travis"
+            data-modal-src="modals/travis.html">
+
+      <img class="project-image" src="assets/projects/travis/travis_cover.png" alt="Travis" loading="lazy" decoding="async">
+      <div class="project-text">
+        <h3 class="project-title">Travis</h3>
+        <div class="project-tags">
+          <div class="project-main-tag">Produktdesign</div>
+          <div class="project-tag">Konzept</div>
+          <div class="project-tag">Prototyp</div>
+        </div>
+        <p class="project-subtitle">Der Tiptoy-Stift Reisebegleiter</p>
+      </div>
+    </button>
+
+    <button class="project-card"
+            data-category="Studie"
+            data-modal-title="Nachrichten im digitalen Zeitalter – Gute User Experience?"
+            data-modal-src="modals/psy.html">
+              <img class="project-image" src="assets/projects/medienpsychologie/medienpsychologie_cover.png" alt="Medienpsychologie" loading="lazy" decoding="async">
+
+      <div class="project-text">
+        <h3 class="project-title">Nachrichten im digitalen Zeitalter</h3>
+                <div class="project-tags">
+          <div class="project-main-tag">Studie</div>
+          <div class="project-tag">Medien</div>
+          <div class="project-tag">Cross-Media</div>
+        </div>
+        <p class="project-subtitle">Cross-Media-Vergleich von Nachrichten-Posts der Tagesschau</p>
+      </div>
+    </button>
+
+    <button class="project-card"
+            data-category="Produktdesign"
+            data-modal-title="Plant Power"
+            data-modal-src="modals/plantpower.html">
+            <img class="project-image" src="assets/projects/plantpower/plantpower_cover.png" alt="Projektfoto" loading="lazy" decoding="async">
+
+      <div class="project-text">
+        <h3 class="project-title">Plant Power</h3>
+                <div class="project-tags">
+          <div class="project-main-tag">Produktdesign</div>
+          <div class="project-tag">Konzept</div>
+          <div class="project-tag">Prototyp</div>
+        </div>
+        <p class="project-subtitle">Motorisierte Fader machen ökologische Zusammenhänge für Kinder sichtbar und fühlbar.        </p>
+      </div>
+    </button>
+
+    <button class="project-card"
+            data-category="Studie"
+            data-modal-title="Evaluating Autonomous Vehicle Reaction to Bullying: The Role of Perspective and Driving Style"
+            data-modal-src="modals/casestudy.html">
+                  <img class="project-image" src="assets/projects/sdut/sdut_cover.png" alt="STUD" loading="lazy" decoding="async">
+      <div class="project-text">
+        <h3 class="project-title">Reaktion autonomer Fahrzeuge auf Mobbing</h3>
+                <div class="project-tags">
+          <div class="project-main-tag">Studie</div>
+          <div class="project-tag">AV</div>
+          <div class="project-tag">Mobbing</div>
+        </div>
+        <p class="project-subtitle">
+          Wie sollten autonome Fahrzeuge auf ausbeuterisches oder aggressives Verhalten menschlicher Fahrer reagieren?
+        </p>
+      </div>
+    </button>
+
+    <button class="project-card"
+            data-category="Produktdesign"
+            data-modal-title="Block"
+            data-modal-src="modals/block.html">
+                  <img class="project-image" src="assets/projects/block/block_cover.png" alt="Block" loading="lazy" decoding="async">
+      <div class="project-text">
+        <h3 class="project-title">Block</h3>
+                <div class="project-tags">
+          <div class="project-main-tag">Produktdesign</div>
+          <div class="project-tag">Konzept</div>
+          <div class="project-tag">Prototyp</div>
+        </div>
+        <p class="project-subtitle">
+          Eine minimalistische Fernbedienung, die sich den Bedürfnissen ihres Nutzers anpasst.
+        </p>
+      </div>
+    </button>
+
+    <button class="project-card"
+            data-category="UI/UX Design"
+            data-modal-title="Luftsportclub Kitzingen"
+            data-modal-src="modals/luftsport.html">
+                  <img class="project-image" src="assets/projects/lsc/lsc_cover.png" alt="LSC" loading="lazy" decoding="async">
+      <div class="project-text">
+        <h3 class="project-title">Luftsportclub Kitzingen</h3>
+                <div class="project-tags">
+          <div class="project-main-tag">UI/UX Design</div>
+          <div class="project-tag">Webseite</div>
+          <div class="project-tag">Wordpress</div>
+        </div>
+        <p class="project-subtitle">
+          Ein freiwilliges Projekt, bei dem ich meinem Verein eine neue
+          Webseite mit WordPress erstellt habe.
+        </p>
+      </div>
+    </button>
+
+    <button class="project-card"
+            data-category="UI/UX Design"
+            data-modal-title="InjurEase"
+            data-modal-src="modals/injurease.html">
+                  <img class="project-image" src="assets/projects/injurease/injurease_cover.png" alt="InjurEase" loading="lazy" decoding="async">
+      <div class="project-text">
+        <h3 class="project-title">InjurEase</h3>
+                <div class="project-tags">
+          <div class="project-main-tag">UI/UX Design</div>
+          <div class="project-tag">Konzept</div>
+          <div class="project-tag">Prototyp</div>
+          <div class="project-tag">Figma</div>
+        </div>
+        <p class="project-subtitle">
+          Eine Fernrehabilitationslösung für verletzte Sportler die von einer Therapeuten-Plattform begleitet wird
+        </p>
+      </div>
+        </button>
+
+    <button class="project-card"
+            data-category="Visual Identity"
+            data-modal-title="Quartier G – Alte Gießerei"
+            data-modal-src="modals/quartier.html">
+                  <img class="project-image" src="assets/projects/quartierg/quartierg_cover.png" alt="QuartierG" loading="lazy" decoding="async">
+      <div class="project-text">
+        <h3 class="project-title">Quartier G – Alte Gießerei</h3>
+                <div class="project-tags">
+          <div class="project-main-tag">Visual Identity</div>
+          <div class="project-tag">Adobe Illustrator</div>
+          <div class="project-tag">Wegeleitsystem</div>
+        </div>
+        <p class="project-subtitle">
+          Auf dem ehemalige Gießereigelände in Ingolstadt entsteht ein
+          Campus. Nun erhält er eine einheitliche Gestaltung.
+        </p>
+      </div>
+    </button>
+
+    <button class="project-card"
+            data-category="UI/UX Design"
+            data-modal-title="Typografisches Interface"
+            data-modal-src="modals/typo.html">
+                  <img class="project-image" src="assets/projects/typografie/typo_cover.jpg" alt="Typografie" loading="lazy" decoding="async">
+      <div class="project-text">
+        <h3 class="project-title">Typografie</h3>
+                <div class="project-tags">
+          <div class="project-main-tag">UI/UX Design</div>
+          <div class="project-tag">Adobe Illustrator</div>
+          <div class="project-tag">Adobe InDesign</div>
+        </div>
+        <p class="project-subtitle">
+          Ein rein typografisches Informationssystem zu Skigebieten, das aus
+          drei Ebenen besteht
+        </p>
+      </div>
+    </button>
+
+  </div>
+
+
+  <!-- Generisches Modal -->
+  <div id="ProjectModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="ProjectModalTitle"></h3>
+        <button class="close" aria-label="Close">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M 18 6 L 6 18 M 6 6 L 18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body" id="ProjectModalBody"></div>
+    </div>
+  </div>
+</section>
 
 
 
