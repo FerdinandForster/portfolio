@@ -133,7 +133,9 @@ header {
   width: 100%;
   z-index: 1;
   position: fixed;
-  background-color: var(--color-bg-default);
+  background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
 }
 
 /* Header mit Blur-Effekt
@@ -208,7 +210,7 @@ header::before {
 .profile-info-description{
   margin: 0;
   color: var(--secondary);
-  font-size: var(--font-size-small);
+  font-size: 0.9rem;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
