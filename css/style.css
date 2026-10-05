@@ -19,6 +19,7 @@
   --bg-light: #ffffff;
   --stroke-light: #E3E3E3;
   --footer-bg-light: #fafafa;
+  --header-bg-light:rgba(255, 255, 255, 0.8);
 
   --primary-dark: #e2e8f0;
   --secondary-dark: #757676;
@@ -27,6 +28,7 @@
   --bg-dark: #121212;
   --stroke-dark: #ffffff24;
   --footer-bg-dark: #000000;
+  --header-bg-dark:rgba(18, 18, 18, 0.8);
 
   --snappy-animation: cubic-bezier(.33, 1.6, .66, 1);
 
@@ -38,6 +40,7 @@
   --color-bg-default: var(--bg-light);
   --color-stroke-default: var(--stroke-light);
   --footer-bg: var(--footer-bg-light);
+  --header-bg: var(--header-bg-light);
 
   color-scheme: light;
 }
@@ -51,6 +54,7 @@
   --color-bg-default: var(--bg-dark);
   --color-stroke-default: var(--stroke-dark);
   --footer-bg: var(--footer-bg-dark);
+  --header-bg: var(--header-bg-dark);
 
   color-scheme: dark;
 }
@@ -133,7 +137,7 @@ header {
   width: 100%;
   z-index: 1;
   position: fixed;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--header-bg);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   backdrop-filter: saturate(180%) blur(20px);
 }
