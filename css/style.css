@@ -69,6 +69,7 @@
     --color-bg-default: var(--bg-dark);
     --color-stroke-default: var(--stroke-dark);
     --footer-bg: var(--footer-bg-dark);
+    --header-bg: var(--header-bg-dark);
 
     color-scheme: dark;
   }
