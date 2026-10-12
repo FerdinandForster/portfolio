@@ -7,7 +7,7 @@
   --font-size-xlarge: 1.15rem;
   --font-size-medium: 1rem;
   --font-size-small: .8rem;
-  --max-width:calc(min(89.5rem, 100vw) - clamp(2rem, 1.0816326530612246rem + 3.9183673469387754vw, 5rem) * 2) /* 60em;*/
+  --max-width: 60em;
     }
 
 /* -----------------------------*/
@@ -519,6 +519,9 @@ footer .theme-control .theme-btn[aria-pressed="true"]{
 /* Responsive Design */
 /* Tablet */
 @media (min-width: 744px) {
+  :root{
+    --max-width: calc(min(89.5rem, 100vw) - clamp(2rem, 1.0816326530612246rem + 3.9183673469387754vw, 5rem) * 2) /* 60em;*/
+  }
   .burger-menu-button,
   .close-menu-button {
   display: none !important;
