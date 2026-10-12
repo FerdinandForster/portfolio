@@ -7,7 +7,7 @@
   --font-size-xlarge: 1.15rem;
   --font-size-medium: 1rem;
   --font-size-small: .8rem;
-  --max-width: 60em; /*calc(min(89.5rem, 100vw) - clamp(2rem, 1.0816326530612246rem + 3.9183673469387754vw, 5rem) * 2)*/
+  --max-width:calc(min(89.5rem, 100vw) - clamp(2rem, 1.0816326530612246rem + 3.9183673469387754vw, 5rem) * 2) /* 60em;*/
     }
 
 /* -----------------------------*/
@@ -20,15 +20,19 @@
   --stroke-light: #E3E3E3;
   --footer-bg-light: #fafafa;
   --header-bg-light:rgba(255, 255, 255, 0.8);
+  --color-base-light: #ffffff;
+  --color-inverse-light: #000000;
 
   --primary-dark: #e2e8f0;
   --secondary-dark: #757676;
   --element-primary-dark: #000000;
   --element-secondary-dark: #1f1f22;
-  --bg-dark: #121212;
+  --bg-dark: rgba(18, 18, 18);
   --stroke-dark: #ffffff24;
   --footer-bg-dark: #000000;
   --header-bg-dark:rgba(18, 18, 18, 0.8);
+  --color-base-dark: #000000;
+  --color-inverse-dark: #ffffff;
 
   --snappy-animation: cubic-bezier(.33, 1.6, .66, 1);
 
@@ -41,7 +45,8 @@
   --color-stroke-default: var(--stroke-light);
   --footer-bg: var(--footer-bg-light);
   --header-bg: var(--header-bg-light);
-
+  --color-base: var(--color-base-light);
+  --color-inverse: var(--color-inverse-light);
   color-scheme: light;
 }
 
@@ -55,7 +60,8 @@
   --color-stroke-default: var(--stroke-dark);
   --footer-bg: var(--footer-bg-dark);
   --header-bg: var(--header-bg-dark);
-
+  --color-base: var(--color-base-dark);
+  --color-inverse: var(--color-inverse-dark);
   color-scheme: dark;
 }
 
@@ -70,7 +76,8 @@
     --color-stroke-default: var(--stroke-dark);
     --footer-bg: var(--footer-bg-dark);
     --header-bg: var(--header-bg-dark);
-
+    --color-base: var(--color-base-dark);
+    --color-inverse: var(--color-inverse-dark);
     color-scheme: dark;
   }
 }
@@ -125,7 +132,6 @@ em {
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, sans-serif;
   margin: 0;
-  background-color: var(--header-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
@@ -140,7 +146,7 @@ header {
   position: fixed;
   background-color: var(--header-bg);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px); 
 }
 
 /* Header mit Blur-Effekt
@@ -230,10 +236,10 @@ header::before {
   align-items: center;
 }
 
-.contact-btn {
+.contact-icon {
+  display: flex;
   border: none;
   background-color: transparent;
-  display: flex;
   width: 40px;
   height: 40px;
   flex-direction: column;
@@ -247,12 +253,24 @@ header::before {
   transition: background-color 0.2s ease;
 
 }
-.contact-btn:hover {
+.contact-icon:hover {
   background-color: var(--element-secondary);
+}
+.contact-btn {
+  display: none;
+  color: var(--color-base);
+  background-color: var(--color-inverse);
+  margin-left: 1rem;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  border-radius: var(--border-radius-lg);
 }
 
 .vl {
-  display: flex;
+display: flex;
 width: 16px;
 justify-content: center;
 align-items: center;
@@ -500,7 +518,7 @@ footer .theme-control .theme-btn[aria-pressed="true"]{
 
 /* Responsive Design */
 /* Tablet */
-@media (min-width: 501px) {
+@media (min-width: 744px) {
   .burger-menu-button,
   .close-menu-button {
   display: none !important;
@@ -536,10 +554,18 @@ flex-direction: row-reverse;
   visibility: visible;
   opacity: 1;
 }
+ .contact-icon {
+  display: none;
 }
+.contact-btn {
+  display: inline-block;
+}
+.vl {
+  display: none;
+}
+}
+
 
 /* Laptop und Desktop */
 @media (min-width: 939px) {
-
- 
 }
