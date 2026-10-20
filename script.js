@@ -3,12 +3,18 @@
 // =======================
 document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll("#myLinks .link-btn");
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-  links.forEach(link => {
-    const href = link.getAttribute("href");
-    link.classList.toggle("active", href === currentPage);
-  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`);
+        });
+      }
+    });
+  }, { threshold: 0.2 }); // 30% Sichtbarkeit, bevor der Link aktiv wird
+
+  document.querySelectorAll("section[id]").forEach(section => observer.observe(section));
 });
 
 
@@ -122,27 +128,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   modal.querySelector(".close").addEventListener("click", closeModal);
 
-// Klick/Tap auf den Hintergrund schließt das Modal
-window.addEventListener("pointerdown", e => {
-  if (e.target === modal) closeModal();
-});
-
-// Escape schließt das Modal
-window.addEventListener("keydown", e => {
-  if (e.key === "Escape" && modal.style.display === "block") {
-    closeModal();
-  }
-});
-
-// Wenn der Fokus aus dem Modal herauswandert, schließt es sich
-document.addEventListener("focusin", e => {
-  if (
-    modal.style.display === "block" &&
-    !modal.querySelector(".modal-content").contains(e.target)
-  ) {
-    closeModal();
-  }
-});
+  window.addEventListener("click", e => { if (e.target === modal) closeModal(); });
+  window.addEventListener("keydown", e => { if (e.key === "Escape" && modal.style.display === "block") closeModal(); });
 });
 
 
@@ -211,154 +198,36 @@ function initCarouselInside(scope) {
 
   updateButtons();
 }
+
+
 // =======================
-// Contact Dropdown
+// Projects Carousel
 // =======================
 document.addEventListener("DOMContentLoaded", () => {
-  const contactCtaWrapper = document.querySelector(".contact-cta-wrapper");
-  const contactDropdownTrigger = document.querySelector(".contact-dropdown-trigger");
-  const contactDropdown = document.querySelector(".contact-dropdown");
+  const track = document.getElementById("projectsTrack");
+  const prevBtn = document.getElementById("projectsPrev");
+  const nextBtn = document.getElementById("projectsNext");
+  if (!track || !prevBtn || !nextBtn) return;
 
-  if (!contactCtaWrapper || !contactDropdownTrigger || !contactDropdown) return;
-
-  let closeTimer;
-
-  function openContactDropdown() {
-    clearTimeout(closeTimer);
-    contactCtaWrapper.classList.add("is-open");
-    contactDropdownTrigger.setAttribute("aria-expanded", "true");
+  function getVisibleCount() {
+    if (window.innerWidth >= 939) return 3;
+    if (window.innerWidth >= 501) return 2;
+    return 1;
   }
 
-  function closeContactDropdown() {
-    closeTimer = setTimeout(() => {
-      contactCtaWrapper.classList.remove("is-open");
-      contactDropdownTrigger.setAttribute("aria-expanded", "false");
-    }, 120);
+  function cardWidth() {
+    const card = track.querySelector(".project-card:not(.hidden)");
+    return card ? card.offsetWidth + 16 : 0;
   }
 
-  function closeContactDropdownNow() {
-    clearTimeout(closeTimer);
-    contactCtaWrapper.classList.remove("is-open");
-    contactDropdownTrigger.setAttribute("aria-expanded", "false");
-  }
+  window.updateProjectsCarouselBtns = function () {
+    prevBtn.disabled = track.scrollLeft <= 4;
+    nextBtn.disabled = track.scrollLeft >= track.scrollWidth - track.offsetWidth - 4;
+  };
 
-  // Desktop: Hover nur auf Trigger und Dropdown
-  contactDropdownTrigger.addEventListener("mouseenter", openContactDropdown);
-  contactDropdownTrigger.addEventListener("mouseleave", closeContactDropdown);
-
-  contactDropdown.addEventListener("mouseenter", openContactDropdown);
-  contactDropdown.addEventListener("mouseleave", closeContactDropdown);
-
-  // Tastatur / Tablet-Fokus
-  contactDropdownTrigger.addEventListener("focus", openContactDropdown);
-
-  contactCtaWrapper.addEventListener("focusout", event => {
-    if (!contactCtaWrapper.contains(event.relatedTarget)) {
-      closeContactDropdownNow();
-    }
-  });
-
-  // Touch / Klick auf Trigger
-  contactDropdownTrigger.addEventListener("click", event => {
-    event.preventDefault();
-    event.stopPropagation();
-
-    if (contactCtaWrapper.classList.contains("is-open")) {
-      closeContactDropdownNow();
-    } else {
-      openContactDropdown();
-    }
-  });
-
-  // Klick/Tap außerhalb schließt das Dropdown
-  document.addEventListener("pointerdown", event => {
-    if (!contactCtaWrapper.contains(event.target)) {
-      closeContactDropdownNow();
-    }
-  });
-
-  // Escape schließt
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-      closeContactDropdownNow();
-      contactDropdownTrigger.focus();
-    }
-  });
+  prevBtn.addEventListener("click", () => { track.scrollLeft -= cardWidth() * getVisibleCount(); });
+  nextBtn.addEventListener("click", () => { track.scrollLeft += cardWidth() * getVisibleCount(); });
+  track.addEventListener("scroll", updateProjectsCarouselBtns);
+  window.addEventListener("resize", updateProjectsCarouselBtns);
+  updateProjectsCarouselBtns();
 });
-
-// =======================
-// Lightbox
-// =======================
-
-(function () {
-  const lightbox    = document.getElementById("lightbox");
-  if (!lightbox) return;
-
-  const overlay   = lightbox.querySelector(".lightbox-overlay");
-  const closeBtn  = lightbox.querySelector(".lightbox-close");
-  const img       = lightbox.querySelector(".lightbox-img");
-  const titleEl   = lightbox.querySelector(".lightbox-title");
-  const counterEl = lightbox.querySelector(".lightbox-counter");
-  const thumbsEl  = lightbox.querySelector(".lightbox-thumbs");
-  const prevBtn   = lightbox.querySelector(".lightbox-prev");
-  const nextBtn   = lightbox.querySelector(".lightbox-next");
-
-  let images = [];
-  let current = 0;
-
-  function show(index) {
-    current = index;
-    img.src = images[current];
-    img.alt = titleEl.textContent + " – Bild " + (current + 1);
-    counterEl.textContent = (current + 1) + " / " + images.length;
-    prevBtn.disabled = current === 0;
-    nextBtn.disabled = current === images.length - 1;
-    thumbsEl.querySelectorAll(".lightbox-thumb").forEach((t, i) =>
-      t.classList.toggle("is-active", i === current)
-    );
-  }
-
-  function open(title, imgs, startIndex) {
-    images = imgs;
-    titleEl.textContent = title;
-    thumbsEl.innerHTML = "";
-    imgs.forEach((src, i) => {
-      const t = document.createElement("img");
-      t.src = src;
-      t.className = "lightbox-thumb";
-      t.alt = title + " " + (i + 1);
-      t.addEventListener("click", () => show(i));
-      thumbsEl.appendChild(t);
-    });
-    lightbox.classList.add("is-open");
-    document.body.style.overflow = "hidden";
-    show(startIndex || 0);
-  }
-
-  function close() {
-    lightbox.classList.remove("is-open");
-    document.body.style.overflow = "";
-    img.src = "";
-  }
-
-  // Karten klickbar machen
-  document.querySelectorAll(".image-card[data-images]").forEach(card => {
-    card.addEventListener("click", () => {
-      const imgs  = JSON.parse(card.dataset.images);
-      const title = card.dataset.title || "";
-      open(title, imgs, 0);
-    });
-  });
-
-  prevBtn.addEventListener("click", () => { if (current > 0) show(current - 1); });
-  nextBtn.addEventListener("click", () => { if (current < images.length - 1) show(current + 1); });
-  closeBtn.addEventListener("click", close);
-  overlay.addEventListener("click", close);
-
-  document.addEventListener("keydown", e => {
-    if (!lightbox.classList.contains("is-open")) return;
-    if (e.key === "ArrowLeft")  show(Math.max(0, current - 1));
-    if (e.key === "ArrowRight") show(Math.min(images.length - 1, current + 1));
-    if (e.key === "Escape")     close();
-  });
-})();
